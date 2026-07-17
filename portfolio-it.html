@@ -595,17 +595,6 @@
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
-
-    /* Touch devices never hover, so show the names as captions instead */
-    @media (hover: none) {
-      .tool { height: auto; flex-direction: column; gap: 0.5rem; padding: 0.9rem 0.4rem; }
-      .tool-name {
-        position: static; transform: none; opacity: 1; z-index: auto;
-        background: none; color: var(--gray); padding: 0;
-        white-space: normal; text-align: center;
-      }
-    }
-
     /* Until a logo file exists, fall back to the tool's name rather than a broken image */
     .tool.missing img { display: none; }
     .tool.missing .tool-name {
