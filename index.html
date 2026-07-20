@@ -302,7 +302,8 @@
       margin-bottom: 1.5rem;
     }
 
-    #hero .inner h1 em {
+    #hero .inner h1 em,
+    #contact h2 em {
       font-family: 'DM Serif Display', serif;
       font-style: italic;
       color: var(--accent);
@@ -470,6 +471,82 @@
       position: absolute;
       left: 0;
       color: var(--accent);
+    }
+
+    /* ─── SERVICES ACCORDION (mobile only) ─── */
+    /* Heading wraps the button per the ARIA APG accordion pattern, so the title stays a
+       real <h3> in the outline at every width — the button is what's interactive. */
+    .service-toggle {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      text-align: left;
+      cursor: default;
+    }
+
+    .service-caret {
+      display: none;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    /* display:contents on desktop makes this wrapper invisible to the grid, so .service-desc
+       and .service-list still land directly in the outer subgrid's row 2 / row 3 exactly as
+       before the wrapper existed — desktop alignment across the 3 cards is unchanged. */
+    .service-card-body {
+      display: contents;
+      grid-row: span 2;
+    }
+
+    @media (max-width: 720px) {
+      .service-toggle { cursor: pointer; }
+      .service-caret { display: inline-block; }
+      .service-card.open .service-caret { transform: rotate(45deg); }
+
+      /* Only here does the wrapper become a real box, so it can collapse/expand */
+      .service-card-body {
+        display: block;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s ease;
+      }
+      .service-card-body .service-desc { margin-bottom: 1.2rem; }
+    }
+
+    /* Defensive reset, same pattern as the mobile nav: a panel left "open" (inline max-height
+       set by JS) while the viewport was narrow can never clip content once back at desktop width */
+    @media (min-width: 721px) {
+      .service-card-body { max-height: none !important; overflow: visible !important; }
+    }
+
+    /* ─── CONTACT: MOBILE ACTIONS (replaces the Google Form on small screens) ─── */
+    .contact-mobile-actions { display: none; }
+
+    @media (max-width: 700px) {
+      /* The embedded form is ~905px tall and doesn't reflow — on mobile it's swapped for
+         direct actions instead. loading="lazy" on the iframe keeps it from fetching at all
+         while hidden here. */
+      .google-form { display: none; }
+
+      .contact-mobile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        margin-top: 2.5rem;
+        max-width: 420px;
+      }
+      .contact-mobile-actions .btn { width: 100%; text-align: center; }
     }
 
     /* ─── SERVICES DIAGRAM ─── */
@@ -1102,7 +1179,7 @@
   <!-- NAV -->
   <nav>
     <a class="logo" href="#hero" aria-label="RNL-MKT">
-      <img src="RNL_MKT_HIGH1.png" alt="" width="56" height="56">
+      <img src="RNL_MKT_V2.png" alt="" width="56" height="56">
     </a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -1151,7 +1228,7 @@
       <a class="btn" href="#contact">Work with me</a>
     </div>
     <div class="hero-logo" aria-hidden="true">
-      <img src="RNL_MKT_HIGH1.png" alt="" width="420" height="420">
+      <img src="RNL_MKT_V2.png" alt="" width="420" height="420">
     </div>
   </div>
 
@@ -1174,9 +1251,10 @@
     <div class="grid">
 
       <div class="service-card">
-        <h3>Brand &amp; Campaign Marketing</h3>
-        <p class="service-desc">Turn your brand into a market presence that drives results. From go-to-market strategy and brand positioning to multi-channel campaign execution and performance marketing — I help businesses grow visibility, generate leads, and convert audiences into customers by creating clear and impactful roadmaps and playbooks.</p>
-        <ul class="service-list">
+        <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-1" onclick="toggleService(this)">Brand &amp; Campaign Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
+        <div class="service-card-body" id="service-panel-1">
+          <p class="service-desc">Turn your brand into a market presence that drives results. From go-to-market strategy and brand positioning to multi-channel campaign execution and performance marketing — I help businesses grow visibility, generate leads, and convert audiences into customers by creating clear and impactful roadmaps and playbooks.</p>
+          <ul class="service-list">
           <li>Campaign Strategy &amp; Management</li>
           <li>Go-to-Market (GTM) Planning</li>
           <li>Brand Positioning &amp; Messaging</li>
@@ -1184,12 +1262,14 @@
           <li>Performance Tracking &amp; Reporting</li>
           <li>AI-Augmented Marketing Workflows</li>
         </ul>
+        </div>
       </div>
 
       <div class="service-card">
-        <h3>Content &amp; Communication</h3>
-        <p class="service-desc">Build brand authority and attract the right audience through content that ranks, resonates, and converts. From SEO content strategy and multilingual copywriting to social media management and email campaigns — I create content systems that work across channels and markets with communication architecture that engages.</p>
-        <ul class="service-list">
+        <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-2" onclick="toggleService(this)">Content &amp; Communication <span class="service-caret" aria-hidden="true">+</span></button></h3>
+        <div class="service-card-body" id="service-panel-2">
+          <p class="service-desc">Build brand authority and attract the right audience through content that ranks, resonates, and converts. From SEO content strategy and multilingual copywriting to social media management and email campaigns — I create content systems that work across channels and markets with communication architecture that engages.</p>
+          <ul class="service-list">
           <li>Content Strategy &amp; Editorial Planning</li>
           <li>Copywriting and customer journey auditing for CR optimisation</li>
           <li>SEO Content &amp; Organic Growth</li>
@@ -1197,12 +1277,14 @@
           <li>Newsletter &amp; Email Copywriting</li>
           <li>Social Media Management</li>
         </ul>
+        </div>
       </div>
 
       <div class="service-card">
-        <h3>Community &amp; Growth Marketing</h3>
-        <p class="service-desc">Grow a loyal audience and increase customer lifetime value. I design CRM and lifecycle marketing programs, ambassador and influencer strategies, and email automation workflows that improve retention, deepen engagement, and turn your community into returning customers. With clear analytics and loyalty programs that match your brand we find the gaps and reduce churn on promising customers.</p>
-        <ul class="service-list">
+        <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-3" onclick="toggleService(this)">Community &amp; Growth Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
+        <div class="service-card-body" id="service-panel-3">
+          <p class="service-desc">Grow a loyal audience and increase customer lifetime value. I design CRM and lifecycle marketing programs, ambassador and influencer strategies, and email automation workflows that improve retention, deepen engagement, and turn your community into returning customers. With clear analytics and loyalty programs that match your brand we find the gaps and reduce churn on promising customers.</p>
+          <ul class="service-list">
           <li>Community Strategy &amp; Management</li>
           <li>Ambassador &amp; Influencer Program Design</li>
           <li>CRM &amp; Lifecycle Marketing</li>
@@ -1210,6 +1292,7 @@
           <li>Retention &amp; Loyalty Program Development</li>
           <li>Audience Growth &amp; Engagement Analytics</li>
         </ul>
+        </div>
       </div>
 
     </div>
@@ -1368,12 +1451,18 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2>Let's work together.</h2>
+    <h2>Let's <em>move</em> together.</h2>
     <div style="width:100%;height:260px;background-image:url('portrait-contact.jpg');background-size:cover;background-position:center;margin-bottom:2.5rem;"></div>
     <p>Have a new project in mind or need some help with a current project, idea or campaign? Please reach out and I'll get back to you within 48hrs.</p>
 
     <div class="google-form">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUo519wf6dkyr0Ih39qse-nA8AO_bePi9HgOlRH2cx4UGa6Q/viewform?embedded=true&hl=en" width="100%" height="905" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUo519wf6dkyr0Ih39qse-nA8AO_bePi9HgOlRH2cx4UGa6Q/viewform?embedded=true&hl=en" width="100%" height="905" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Laden…</iframe>
+    </div>
+
+    <div class="contact-mobile-actions">
+      <a class="btn jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Call</a>
+      <a class="btn" href="https://wa.me/393926649331?text=Hi%20Roseline%2C%20I%27m%20reaching%20out%20from%20your%20website." target="_blank" rel="noopener">Message</a>
+      <a class="btn jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a>
     </div>
 
     <div class="contact-alt">
@@ -1477,6 +1566,22 @@
     });
     dd.querySelectorAll('.nav-dropdown-menu a').forEach(a => a.addEventListener('click', close));
   })();
+
+  function toggleService(btn) {
+    const card = btn.closest('.service-card');
+    const panel = card.querySelector('.service-card-body');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.service-card').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.service-toggle').setAttribute('aria-expanded', 'false');
+      c.querySelector('.service-card-body').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      card.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  }
 
   function toggleTools(btn) {
     const panel = btn.nextElementSibling;
