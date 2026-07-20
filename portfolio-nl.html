@@ -410,7 +410,7 @@
     }
 
     @media (max-width: 720px) {
-      #services .grid { grid-template-columns: 1fr; }
+      #services .grid { grid-template-columns: 1fr; row-gap: 0.6rem; }
       #services { max-width: var(--max-w); }
     }
 
@@ -511,18 +511,35 @@
     }
 
     @media (max-width: 720px) {
+      /* Stacking 3 span-3 subgrid cards into a single column forces the browser to invent
+         extra implicit row tracks (9 total instead of 3 shared ones), and row-gap applies
+         between ALL of them — that's what was leaking ~19px of unwanted space per card below
+         the collapsed body. Dropping the card out of grid entirely on mobile removes that
+         leak outright; the subgrid alignment it was for only matters on desktop's 3-column
+         layout anyway, where this rule doesn't apply. */
+      .service-card {
+        display: block;
+        padding: 1.1rem 1.5rem;   /* was 2rem all sides — the "grey area" tightened */
+      }
+
       .service-toggle { cursor: pointer; }
       .service-caret { display: inline-block; }
       .service-card.open .service-caret { transform: rotate(45deg); }
 
-      /* Only here does the wrapper become a real box, so it can collapse/expand */
+      /* Only here does the wrapper become a real box, so it can collapse/expand.
+         The pre-content gap lives as margin-top on the FIRST CHILD, not padding on this
+         element itself — padding is never compressible below its own size regardless of
+         max-height (verified: max-height:0 + box-sizing:border-box still rendered 14px of
+         padding-top here). A child's margin-top works because this parent's overflow:hidden
+         blocks margin-collapse, which puts that space inside the parent's own box — so it's
+         genuinely subject to the parent's max-height clip and disappears when closed. */
       .service-card-body {
         display: block;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.35s ease;
       }
-      .service-card-body .service-desc { margin-bottom: 1.2rem; }
+      .service-card-body .service-desc { margin-top: 0.9rem; margin-bottom: 0.9rem; }
     }
 
     /* Defensive reset, same pattern as the mobile nav: a panel left "open" (inline max-height
@@ -910,9 +927,6 @@
         <li><a href="#work">Mijn werk</a></li>
         <li><a href="#pricing">Tarieven</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Bellen</a></li>
-        <li><a href="https://wa.me/393926649331?text=Hoi%20Roseline%2C%20ik%20neem%20contact%20op%20via%20je%20website." target="_blank" rel="noopener">Bericht</a></li>
-        <li><a class="jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a></li>
       </ul>
     </div>
   </nav>
