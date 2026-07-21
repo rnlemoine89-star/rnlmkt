@@ -1176,6 +1176,23 @@
       flex-wrap: wrap;
     }
 
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      display: block;
+      width: 80px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 560px) {
+      .footer-logo { width: 40px; }
+    }
+
     .footer-left, .footer-right {
       display: flex;
       flex-direction: column;
@@ -1502,9 +1519,12 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-left">
+    <div class="footer-brand">
+      <img src="RNL_MKT_V5.png" alt="" width="40" height="40" class="footer-logo">
+      <div class="footer-left">
       <span>© 2026 RNL-MKT</span>
       <span>Consultante Marketing Freelance · Varese, Italie</span>
+      </div>
     </div>
     <div class="footer-right">
       <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>

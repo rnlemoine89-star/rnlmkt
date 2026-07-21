@@ -878,6 +878,9 @@
 
     /* ─── FOOTER ─── */
     footer { border-top: 1px solid var(--border); padding: 2rem; max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 1rem; }
+    .footer-logo { display: block; width: 80px; height: auto; flex-shrink: 0; }
+    @media (max-width: 560px) { .footer-logo { width: 40px; } }
     .footer-left, .footer-right { display: flex; flex-direction: column; gap: 0.3rem; }
     footer span { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--gray); }
     footer a { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--gray); text-decoration: none; }
@@ -1184,9 +1187,12 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-left">
+    <div class="footer-brand">
+      <img src="RNL_MKT_V5.png" alt="" width="40" height="40" class="footer-logo">
+      <div class="footer-left">
       <span>© 2026 RNL-MKT</span>
       <span>Freelance Marketingconsultant · Varese, Italië</span>
+      </div>
     </div>
     <div class="footer-right">
       <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
