@@ -96,7 +96,7 @@
     nav a:hover { color: var(--black); }
 
     /* Full-size links need more room than the viewport below this; tighten them */
-    @media (max-width: 950px) {
+    @media (max-width: 1020px) {
       nav { padding: 0.5rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
       .nav-right { gap: 1.2rem; }
@@ -415,10 +415,15 @@
     }
 
     /* Measured: with the Contact caret, NL nav needs 764px tightened */
-    @media (max-width: 790px) {
+    @media (max-width: 820px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .mobile-menu { display: block; }
+      /* 5 lang buttons no longer fit alongside the logo + hamburger on the narrowest
+         phones; only shrinks here, where the hamburger already replaces the full nav.
+         nav .lang-switcher button (3 selectors) outranks the base .lang-switcher button
+         (2 selectors) declared later in the stylesheet, regardless of source order. */
+      nav .lang-switcher button { padding: 0.35rem 0.4rem; }
     }
 
     .service-card {
@@ -690,15 +695,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Touch devices never hover, so show the names as captions instead */
-    @media (hover: none) {
-      .tool { height: auto; flex-direction: column; gap: 0.5rem; padding: 0.9rem 0.4rem; }
-      .tool-name {
-        position: static; transform: none; opacity: 1; z-index: auto;
-        background: none; color: var(--gray); padding: 0;
-        white-space: normal; text-align: center;
-      }
-    }
     /* Until a logo file exists, fall back to the tool's name rather than a broken image */
     .tool.missing img { display: none; }
     .tool.missing .tool-name {
@@ -893,7 +889,7 @@
   <!-- NAV -->
   <nav>
     <a class="logo" href="#hero" aria-label="RNL-MKT">
-      <img src="RNL_MKT_V2.png" alt="" width="56" height="56">
+      <img src="RNL_MKT_V5.png" alt="" width="56" height="56">
     </a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -915,6 +911,8 @@
         <button onclick="window.location.href='index.html'">EN</button>
         <button onclick="window.location.href='portfolio-it.html'">IT</button>
         <button class="active">NL</button>
+        <button onclick="window.location.href='portfolio-de.html'">DE</button>
+        <button onclick="window.location.href='portfolio-fr.html'">FR</button>
       </div>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu(this)">
         <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -935,11 +933,11 @@
   <div id="hero">
     <div class="inner">
       <h1>Marketing that<br><em>moves</em><br>your business.</h1>
-      <p>Freelance marketeer gespecialiseerd in strategie, content en groei voor merken, e-commerce en digitale producten.</p>
+      <p>Freelance marketeer gespecialiseerd in AI-strategie, content en groei voor merken, e-commerce en digitale producten.</p>
       <a class="btn" href="#contact">Werk met mij</a>
     </div>
     <div class="hero-logo" aria-hidden="true">
-      <img src="RNL_MKT_V2.png" alt="" width="420" height="420">
+      <img src="RNL_MKT_V5.png" alt="" width="420" height="420">
     </div>
   </div>
 
@@ -984,7 +982,7 @@
           <li>Contentstrategie &amp; redactionele planning</li>
           <li>Copywriting en customer journey-audit voor CRO</li>
           <li>SEO-content &amp; organische groei</li>
-          <li>Meertalige contentproductie (NL / EN / IT)</li>
+          <li>Meertalige contentproductie (NL / EN / IT / DE / FR)</li>
           <li>Nieuwsbrief &amp; e-mailcopywriting</li>
           <li>Social media management</li>
         </ul>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RNL-MKT — Freelance Marketer</title>
+  <title>RNL-MKT — Freelance Marketing-Beraterin</title>
   <link rel="preload" href="fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/dmserifdisplay-italic.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/dmsans-variable.woff2" as="font" type="font/woff2" crossorigin />
@@ -96,7 +96,7 @@
     nav a:hover { color: var(--black); }
 
     /* Full-size links need ~875px; tighten them so they survive down to the 700px cut-off */
-    @media (max-width: 970px) {
+    @media (max-width: 1050px) {
       nav { padding: 0.5rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
       .nav-right { gap: 1.2rem; }
@@ -425,7 +425,7 @@
     }
 
     /* With the Contact caret the links need ~724px tightened; collapse below that */
-    @media (max-width: 780px) {
+    @media (max-width: 845px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .mobile-menu { display: block; }
@@ -1207,25 +1207,25 @@
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">How I Help</a></li>
-        <li><a href="#work">The Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#services">Wie ich helfe</a></li>
+        <li><a href="#work">Meine Arbeit</a></li>
+        <li><a href="#pricing">Preise</a></li>
         <li class="nav-dropdown">
-            <a href="#contact" class="nav-dropdown-link">Contact</a>
-            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Contact options" onclick="toggleContact(this)"><span class="nav-caret" aria-hidden="true">▾</span></button>
+            <a href="#contact" class="nav-dropdown-link">Kontakt</a>
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Kontaktoptionen" onclick="toggleContact(this)"><span class="nav-caret" aria-hidden="true">▾</span></button>
             <ul class="nav-dropdown-menu">
-              <li><a class="jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Call</a></li>
-              <li><a href="https://wa.me/393926649331?text=Hi%20Roseline%2C%20I%27m%20reaching%20out%20from%20your%20website." target="_blank" rel="noopener">Message</a></li>
+              <li><a class="jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Anrufen</a></li>
+              <li><a href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20deine%20Website." target="_blank" rel="noopener">Nachricht</a></li>
               <li><a class="jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a></li>
             </ul>
           </li>
       </ul>
       <div class="lang-switcher">
-        <button class="active">EN</button>
+        <button onclick="window.location.href='index.html'">EN</button>
         <button onclick="window.location.href='portfolio-it.html'">IT</button>
         <button onclick="window.location.href='portfolio-nl.html'">NL</button>
-        <button onclick="window.location.href='portfolio-de.html'">DE</button>
+        <button class="active">DE</button>
         <button onclick="window.location.href='portfolio-fr.html'">FR</button>
       </div>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu(this)">
@@ -1234,11 +1234,11 @@
     </div>
     <div class="mobile-menu" id="mobile-menu">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">How I Help</a></li>
-        <li><a href="#work">The Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#services">Wie ich helfe</a></li>
+        <li><a href="#work">Meine Arbeit</a></li>
+        <li><a href="#pricing">Preise</a></li>
+        <li><a href="#contact">Kontakt</a></li>
       </ul>
     </div>
   </nav>
@@ -1247,8 +1247,8 @@
   <div id="hero">
     <div class="inner">
       <h1>Marketing that<br><em>moves</em><br>your business.</h1>
-      <p>Freelance marketer specialising in AI strategy, content, and growth for brands, e-commerce, and digital products.</p>
-      <a class="btn" href="#contact">Work with me</a>
+      <p>Freelance Marketing-Beraterin mit Fokus auf KI-Strategie, Content und Wachstum für Marken, E-Commerce und digitale Produkte.</p>
+      <a class="btn" href="#contact">Mit mir arbeiten</a>
     </div>
     <div class="hero-logo" aria-hidden="true">
       <img src="RNL_MKT_V5.png" alt="" width="420" height="420">
@@ -1257,37 +1257,37 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <h2>Strategy-first. Always creative.</h2>
+    <h2>Strategie zuerst. Immer kreativ.</h2>
     <div class="about-grid">
       <div class="portrait-block">
         <img src="portrait.jpg" alt="Roseline Lemoine" class="portrait" width="500" height="500">
-        <p class="portrait-caption">Roseline Lemoine · AI Marketer</p>
+        <p class="portrait-caption">Roseline Lemoine · KI-Marketerin</p>
       </div>
       <div class="bio">
-        <p>As an international marketing consultant specialising in brand strategy, content marketing, social media, and digital marketing campaigns. I help start-ups, e-commerce brands, and growing businesses build stronger brands, reach the right audiences, and achieve sustainable growth — without the overhead of a full-time marketing team.</p>
-        <p>What makes this possible is a unique combination: strategic depth, creative execution, multilingual reach across English, Dutch, and Italian, and native AI fluency. I support organisations in working with AI tools as a force multiplier — accelerating research, content production, campaign analysis, and decision-making — so you get the speed and output of a full team at the cost of one consultant.</p>
-        <p>Over the past 10+ years, I developed brands, communities, and campaigns across the cycling, outdoor, and lifestyle sectors. For me, effective marketing starts with understanding people: what they value, what captures their attention, and what motivates them to act.</p>
-        <p>Based in Varese, Italy, I work with businesses across Europe.</p>
+        <p>Als internationale Marketing-Beraterin spezialisiert auf Markenstrategie, Content-Marketing, Social Media und digitale Marketingkampagnen. Ich helfe Start-ups, E-Commerce-Marken und wachsenden Unternehmen dabei, stärkere Marken aufzubauen, die richtige Zielgruppe zu erreichen und nachhaltiges Wachstum zu erzielen — ohne den Aufwand eines internen Marketingteams.</p>
+        <p>Möglich macht das eine einzigartige Kombination: strategische Tiefe, kreative Umsetzung, mehrsprachige Reichweite in Englisch, Niederländisch und Italienisch sowie native KI-Kompetenz. Ich unterstütze Unternehmen dabei, KI-Tools als Kraftmultiplikator einzusetzen — für schnellere Recherche, Content-Produktion, Kampagnenanalyse und Entscheidungsfindung — damit du die Geschwindigkeit und Leistung eines ganzen Teams zu den Kosten einer einzigen Beraterin bekommst.</p>
+        <p>In den letzten 10+ Jahren habe ich Marken, Communities und Kampagnen in den Bereichen Radsport, Outdoor und Lifestyle entwickelt. Für mich beginnt effektives Marketing mit dem Verständnis von Menschen: was sie schätzen, was ihre Aufmerksamkeit weckt und was sie zum Handeln motiviert.</p>
+        <p>Mit Sitz in Varese, Italien, arbeite ich mit Unternehmen in ganz Europa.</p>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
-    <h2>How I Help</h2>
+    <h2>Wie ich helfe</h2>
     <div class="grid">
 
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-1" onclick="toggleService(this)">Brand &amp; Campaign Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-1">
-          <p class="service-desc">Turn your brand into a market presence that drives results. From go-to-market strategy and brand positioning to multi-channel campaign execution and performance marketing — I help businesses grow visibility, generate leads, and convert audiences into customers by creating clear and impactful roadmaps and playbooks.</p>
+          <p class="service-desc">Verwandle deine Marke in eine Marktpräsenz, die Ergebnisse liefert. Von Go-to-Market-Strategie und Markenpositionierung bis hin zur Umsetzung von Multichannel-Kampagnen und Performance-Marketing — ich helfe Unternehmen, Sichtbarkeit zu steigern, Leads zu generieren und Zielgruppen in Kunden zu verwandeln, indem ich klare und wirkungsvolle Roadmaps und Playbooks erstelle.</p>
           <ul class="service-list">
-          <li>Campaign Strategy &amp; Management</li>
-          <li>Go-to-Market (GTM) Planning</li>
-          <li>Brand Positioning &amp; Messaging</li>
-          <li>Paid &amp; Organic Channel Activation</li>
-          <li>Performance Tracking &amp; Reporting</li>
-          <li>AI-Augmented Marketing Workflows</li>
+          <li>Kampagnenstrategie &amp; -management</li>
+          <li>Go-to-Market (GTM) Planung</li>
+          <li>Markenpositionierung &amp; Messaging</li>
+          <li>Paid- &amp; Organic-Kanalaktivierung</li>
+          <li>Performance-Tracking &amp; Reporting</li>
+          <li>KI-gestützte Marketing-Workflows</li>
         </ul>
         </div>
       </div>
@@ -1295,14 +1295,14 @@
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-2" onclick="toggleService(this)">Content &amp; Communication <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-2">
-          <p class="service-desc">Build brand authority and attract the right audience through content that ranks, resonates, and converts. From SEO content strategy and multilingual copywriting to social media management and email campaigns — I create content systems that work across channels and markets with communication architecture that engages.</p>
+          <p class="service-desc">Baue Markenautorität auf und erreiche die richtige Zielgruppe mit Content, der rankt, ankommt und konvertiert. Von SEO-Content-Strategie und mehrsprachigem Copywriting bis hin zu Social-Media-Management und E-Mail-Kampagnen — ich entwickle Content-Systeme, die kanal- und marktübergreifend funktionieren, mit einer Kommunikationsstruktur, die überzeugt.</p>
           <ul class="service-list">
-          <li>Content Strategy &amp; Editorial Planning</li>
-          <li>Copywriting and customer journey auditing for CR optimisation</li>
-          <li>SEO Content &amp; Organic Growth</li>
-          <li>Multilingual Content Production (EN / IT / NL / DE / FR)</li>
-          <li>Newsletter &amp; Email Copywriting</li>
-          <li>Social Media Management</li>
+          <li>Content-Strategie &amp; Redaktionsplanung</li>
+          <li>Copywriting und Customer-Journey-Analyse für CRO</li>
+          <li>SEO-Content &amp; organisches Wachstum</li>
+          <li>Mehrsprachige Content-Produktion (DE / EN / IT / NL / FR)</li>
+          <li>Newsletter &amp; E-Mail-Copywriting</li>
+          <li>Social-Media-Management</li>
         </ul>
         </div>
       </div>
@@ -1310,14 +1310,14 @@
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-3" onclick="toggleService(this)">Community &amp; Growth Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-3">
-          <p class="service-desc">Grow a loyal audience and increase customer lifetime value. I design CRM and lifecycle marketing programs, ambassador and influencer strategies, and email automation workflows that improve retention, deepen engagement, and turn your community into returning customers. With clear analytics and loyalty programs that match your brand we find the gaps and reduce churn on promising customers.</p>
+          <p class="service-desc">Baue ein treues Publikum auf und steigere den Customer Lifetime Value. Ich entwickle CRM- und Lifecycle-Marketing-Programme, Ambassador- und Influencer-Strategien sowie E-Mail-Automatisierungs-Workflows, die die Kundenbindung verbessern, das Engagement vertiefen und deine Community in wiederkehrende Kunden verwandeln. Mit klaren Analysen und Loyalty-Programmen, die zu deiner Marke passen, finden wir die Schwachstellen und reduzieren die Abwanderung bei vielversprechenden Kunden.</p>
           <ul class="service-list">
-          <li>Community Strategy &amp; Management</li>
-          <li>Ambassador &amp; Influencer Program Design</li>
-          <li>CRM &amp; Lifecycle Marketing</li>
-          <li>Email Automation &amp; Segmentation</li>
-          <li>Retention &amp; Loyalty Program Development</li>
-          <li>Audience Growth &amp; Engagement Analytics</li>
+          <li>Community-Strategie &amp; -Management</li>
+          <li>Ambassador- &amp; Influencer-Programme</li>
+          <li>CRM &amp; Lifecycle-Marketing</li>
+          <li>E-Mail-Automatisierung &amp; Segmentierung</li>
+          <li>Retention- &amp; Loyalty-Programme</li>
+          <li>Publikumswachstum &amp; Engagement-Analytics</li>
         </ul>
         </div>
       </div>
@@ -1325,7 +1325,7 @@
     </div>
 
     <div class="tools-wrapper">
-      <button class="tools-toggle" type="button" aria-expanded="false" aria-controls="tools-panel" onclick="toggleTools(this)">Tools & Software I work with <span class="tools-icon" aria-hidden="true">+</span></button>
+      <button class="tools-toggle" type="button" aria-expanded="false" aria-controls="tools-panel" onclick="toggleTools(this)">Tools & Software, mit denen ich arbeite <span class="tools-icon" aria-hidden="true">+</span></button>
       <div class="tools-panel" id="tools-panel">
         <ul class="tools-grid">
         <li class="tool"><img src="logos/meta-ads.svg" alt="Meta Ads" width="32" height="32" onerror="this.closest('.tool').classList.add('missing')"><span class="tool-name">Meta Ads</span></li>
@@ -1354,24 +1354,24 @@
 
   <!-- PRICING -->
   <section id="pricing">
-    <h2>Pricing</h2>
+    <h2>Preise</h2>
     <div class="pricing-accordion">
 
       <div class="pricing-item">
         <button class="pricing-trigger" onclick="togglePricing(this)">
-          <span class="pricing-title">Hourly</span>
+          <span class="pricing-title">Stundensatz</span>
           <span class="pricing-icon">+</span>
         </button>
         <div class="pricing-panel">
           <div class="pricing-panel-inner">
             <div>
-              <div class="pricing-rate-inline" style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">€80<span style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--gray);"> / hr</span></div>
-              <p class="pricing-desc">Ideal for short-term support, audits, consultations, or ad-hoc tasks where you need focused expertise without a long-term commitment.</p>
+              <div class="pricing-rate-inline" style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">€80<span style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--gray);"> / Std.</span></div>
+              <p class="pricing-desc">Ideal für kurzfristige Unterstützung, Audits, Beratungen oder Ad-hoc-Aufgaben, bei denen du fokussierte Expertise ohne langfristige Verpflichtung brauchst.</p>
             </div>
             <ul class="pricing-includes">
-              <li>Minimum 2 hours</li>
-              <li>Invoiced monthly</li>
-              <li>Flexible scope</li>
+              <li>Minimum 2 Stunden</li>
+              <li>Monatliche Rechnungsstellung</li>
+              <li>Flexibler Umfang</li>
             </ul>
           </div>
         </div>
@@ -1379,19 +1379,19 @@
 
       <div class="pricing-item">
         <button class="pricing-trigger" onclick="togglePricing(this)">
-          <span class="pricing-title">Project Forfait</span>
+          <span class="pricing-title">Projektpauschale</span>
           <span class="pricing-icon">+</span>
         </button>
         <div class="pricing-panel">
           <div class="pricing-panel-inner">
             <div>
-              <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">From €2,500</div>
-              <p class="pricing-desc">Best for larger, defined projects — campaign launches, content strategies, CRM setups, or community programs with clear deliverables and timelines.</p>
+              <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">Ab €2.500</div>
+              <p class="pricing-desc">Am besten für größere, klar definierte Projekte — Kampagnenlaunches, Content-Strategien, CRM-Einrichtungen oder Community-Programme mit klaren Deliverables und Timelines.</p>
             </div>
             <ul class="pricing-includes">
-              <li>Fixed scope &amp; deliverables</li>
-              <li>Project timeline agreed upfront</li>
-              <li>50% deposit to start</li>
+              <li>Fester Umfang &amp; Deliverables</li>
+              <li>Projekt-Timeline im Voraus vereinbart</li>
+              <li>50% Anzahlung zum Start</li>
             </ul>
           </div>
         </div>
@@ -1399,19 +1399,19 @@
 
       <div class="pricing-item">
         <button class="pricing-trigger" onclick="togglePricing(this)">
-          <span class="pricing-title">Monthly Retainer</span>
+          <span class="pricing-title">Monatliches Retainer</span>
           <span class="pricing-icon">+</span>
         </button>
         <div class="pricing-panel">
           <div class="pricing-panel-inner">
             <div>
-              <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">From €1,500<span style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--gray);"> / mo</span></div>
-              <p class="pricing-desc">For ongoing marketing support — ideal for brands that need consistent strategy, content, and execution without the cost of a full-time hire.</p>
+              <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">Ab €1.500<span style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--gray);"> / Monat</span></div>
+              <p class="pricing-desc">Für laufende Marketing-Unterstützung — ideal für Marken, die konsistente Strategie, Content und Umsetzung brauchen, ohne die Kosten einer Festanstellung.</p>
             </div>
             <ul class="pricing-includes">
-              <li>Minimum 3 months</li>
-              <li>Defined monthly deliverables</li>
-              <li>Priority availability</li>
+              <li>Minimum 3 Monate</li>
+              <li>Definierte monatliche Deliverables</li>
+              <li>Priorisierte Verfügbarkeit</li>
             </ul>
           </div>
         </div>
@@ -1422,54 +1422,54 @@
 
   <!-- CTA -->
   <div class="cta-strip">
-    <p class="cta-text">Schedule your free intro call to share your <em>problem, project or idea.</em></p>
-    <a class="cta-btn" href="#contact">Book a call</a>
+    <p class="cta-text">Vereinbare dein kostenloses Erstgespräch, um dein <em>Problem, Projekt oder deine Idee</em> zu teilen.</p>
+    <a class="cta-btn" href="#contact">Termin vereinbaren</a>
   </div>
 
   <!-- WORK -->
   <section id="work">
-    <h2>The Work</h2>
+    <h2>Meine Arbeit</h2>
     <div class="case-list">
 
       <div class="case">
-        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — freelance web developer portfolio site" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
+        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — Portfolio-Website eines freiberuflichen Webentwicklers" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
         <div>
-          <div class="tag">Web · Personal brand</div>
-          <h3>Turning a freelance web developer's site into a booked-call engine</h3>
+          <div class="tag">Web · Personal Brand</div>
+          <h3>Von der Visitenkarte zur Terminmaschine: die Website eines freiberuflichen Webentwicklers</h3>
         </div>
         <div>
-          <p>Reworked positioning, messaging and page structure for Fabio Angelici's freelance web-developer site — sharper hero copy, clearer service framing, and a conversion-first layout with prominent CTAs. Paired with on-page SEO and analytics tracking to turn passive visitors into booked intro calls.</p>
-          <p class="result">↑ [XX]% CTR on the primary CTA · [XX]% lift in conversion rate (CRO) · [XX]% more organic traffic in [X] months</p>
+          <p>Positionierung, Botschaft und Seitenstruktur für die Website von Fabio Angelici, freiberuflicher Webentwickler, überarbeitet — schärferer Hero-Text, klarere Leistungsdarstellung und ein konversionsorientiertes Layout mit auffälligen CTAs. Ergänzt durch On-Page-SEO und Analytics-Tracking, um aus passiven Besuchern gebuchte Erstgespräche zu machen.</p>
+          <p class="result">↑ [XX]% CTR auf den primären CTA · [XX]% höhere Conversion-Rate (CRO) · [XX]% mehr organischer Traffic in [X] Monaten</p>
         </div>
       </div>
 
       <div class="case">
         <div class="img-placeholder case-image">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Project image</span>
+          <span>Projektbild</span>
         </div>
         <div>
           <div class="tag">SaaS</div>
-          <h3>Repositioning a B2B tool for a new audience segment</h3>
+          <h3>Neupositionierung eines B2B-Tools für ein neues Zielgruppensegment</h3>
         </div>
         <div>
-          <p>Led a messaging overhaul for a project management app targeting freelancers — new positioning, landing page copy, onboarding emails, and a LinkedIn content programme.</p>
-          <p class="result">↑ 22% increase in trial-to-paid conversion · New segment now 30% of MRR</p>
+          <p>Messaging-Überarbeitung für eine Projektmanagement-App für Freelancer geleitet — neue Positionierung, Landingpage-Text, Onboarding-E-Mails und ein LinkedIn-Content-Programm.</p>
+          <p class="result">↑ 22% höhere Trial-zu-Paid-Conversion · Neues Segment jetzt 30% des MRR</p>
         </div>
       </div>
 
       <div class="case">
         <div class="img-placeholder case-image">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Project image</span>
+          <span>Projektbild</span>
         </div>
         <div>
-          <div class="tag">Brand launch</div>
-          <h3>End-to-end launch campaign for a new fashion label</h3>
+          <div class="tag">Markenlaunch</div>
+          <h3>End-to-End-Launch-Kampagne für ein neues Modelabel</h3>
         </div>
         <div>
-          <p>Managed pre-launch buzz, influencer seeding, email list building, and launch-day content across channels for an emerging fashion brand's debut collection.</p>
-          <p class="result">Sold out first drop in 48 hours · 1,200 waitlist sign-ups pre-launch</p>
+          <p>Pre-Launch-Buzz, Influencer-Seeding, Aufbau der E-Mail-Liste und Launch-Day-Content über alle Kanäle für das Debüt einer aufstrebenden Modemarke gesteuert.</p>
+          <p class="result">Erste Kollektion in 48 Stunden ausverkauft · 1.200 Warteliste-Anmeldungen vor dem Launch</p>
         </div>
       </div>
 
@@ -1480,15 +1480,15 @@
   <section id="contact">
     <h2>Let's <em>move</em> together.</h2>
     <div style="width:100%;height:260px;background-image:url('portrait-contact.jpg');background-size:cover;background-position:center;margin-bottom:2.5rem;"></div>
-    <p>Have a new project in mind or need some help with a current project, idea or campaign? Please reach out and I'll get back to you within 48hrs.</p>
+    <p>Hast du ein neues Projekt im Kopf oder brauchst du Unterstützung bei einem laufenden Projekt, einer Idee oder Kampagne? Melde dich gerne — ich melde mich innerhalb von 48 Stunden zurück.</p>
 
     <div class="google-form">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUo519wf6dkyr0Ih39qse-nA8AO_bePi9HgOlRH2cx4UGa6Q/viewform?embedded=true&hl=en" width="100%" height="905" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Laden…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUo519wf6dkyr0Ih39qse-nA8AO_bePi9HgOlRH2cx4UGa6Q/viewform?embedded=true&hl=de" width="100%" height="905" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Wird geladen…</iframe>
     </div>
 
     <div class="contact-mobile-actions">
-      <a class="btn jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Call</a>
-      <a class="btn" href="https://wa.me/393926649331?text=Hi%20Roseline%2C%20I%27m%20reaching%20out%20from%20your%20website." target="_blank" rel="noopener">Message</a>
+      <a class="btn jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Anrufen</a>
+      <a class="btn" href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20deine%20Website." target="_blank" rel="noopener">Nachricht</a>
       <a class="btn jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a>
     </div>
 
@@ -1504,7 +1504,7 @@
   <footer>
     <div class="footer-left">
       <span>© 2026 RNL-MKT</span>
-      <span>Freelance Marketing Consultant · Varese, Italy</span>
+      <span>Freelance Marketing-Beraterin · Varese, Italien</span>
     </div>
     <div class="footer-right">
       <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
