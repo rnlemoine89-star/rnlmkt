@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK5004VRP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HK5004VRP4');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RNL-MKT — Consulente Marketing Freelance</title>
@@ -332,6 +342,26 @@
 
     .btn:hover { background: var(--accent-light); }
 
+    /* Two hero CTAs side by side; wraps to stacked on narrow screens */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    /* Outlined secondary CTA — supports the primary rather than competing with it.
+       Padding subtracts the 1px border so both buttons stay exactly the same height. */
+    .btn-secondary {
+      color: var(--accent);
+      background: none;
+      border: 1px solid var(--accent);
+      /* slightly tighter than the primary so longer localized labels (IT/FR) still fit on one row */
+      padding: calc(0.9rem - 1px) calc(1.6rem - 1px);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--accent); color: var(--white); }
+
     /* ─── SECTIONS ─── */
     section {
       padding: 6rem 2rem;
@@ -377,6 +407,17 @@
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    /* Sits in the same grid column as the photo (wrapped together) so it hugs the image
+       regardless of how tall the bio column next to it grows */
+    #about .portrait-caption {
+      margin-top: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
     }
 
     #about .bio {
@@ -935,7 +976,11 @@
     <div class="inner">
       <h1>Marketing that<br><em>moves</em><br>your business.</h1>
       <p>Consulente marketing freelance specializzata in strategia AI, contenuti e crescita per brand, e-commerce e prodotti digitali.</p>
-      <a class="btn" href="#contact">Lavora con me</a>
+      <!-- TODO: point the "free call" CTAs at the Calendly link when ready (also in .cta-strip below) -->
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Lavora con me</a>
+        <a class="btn btn-secondary" href="#contact">Prenota una chiamata gratuita</a>
+      </div>
     </div>
     <div class="hero-logo" aria-hidden="true">
       <img src="RNL_MKT_V5.png" alt="" width="420" height="420">
@@ -946,11 +991,15 @@
   <section id="about">
     <h2>Prima la strategia. Sempre creatività.</h2>
     <div class="about-grid">
-      <img src="portrait.jpg" alt="Roseline Lemoine" class="portrait" width="500" height="500">
+      <div class="portrait-block">
+        <img src="portrait.jpg" alt="Roseline Lemoine" class="portrait" width="500" height="500">
+        <p class="portrait-caption">Roseline Lemoine · AI Marketer</p>
+      </div>
       <div class="bio">
-        <p>Sono Roseline Lemoine, una consulente marketing internazionale specializzata in brand strategy, content marketing, social media e campagne di marketing digitale. Aiuto start-up, brand e-commerce e aziende in crescita a costruire brand più forti, raggiungere il pubblico giusto e ottenere una crescita sostenibile — senza i costi di un team marketing interno a tempo pieno.</p>
-        <p>Ciò che rende tutto questo possibile è una combinazione unica: profondità strategica, esecuzione creativa, capacità multilingue in inglese, olandese e italiano, e una padronanza nativa degli strumenti AI. Utilizzo l'intelligenza artificiale come moltiplicatore di forza — accelerando ricerca, produzione di contenuti, analisi delle campagne e processo decisionale — così ottieni la velocità e la produttività di un intero team al costo di un singolo consulente.</p>
-        <p>Negli ultimi 10+ anni ho sviluppato brand, community e campagne nei settori del ciclismo, outdoor e lifestyle. Per me, un marketing efficace parte dalla comprensione delle persone: cosa valorizzano, cosa cattura la loro attenzione e cosa le motiva ad agire. Basata a Varese, in Italia, lavoro con aziende in Italia e Svizzera.</p>
+        <p>Sono una consulente marketing internazionale specializzata in brand strategy, content marketing, social media e campagne di marketing digitale. Aiuto start-up, brand e-commerce e aziende in crescita a costruire brand più forti, raggiungere il pubblico giusto e ottenere una crescita sostenibile — senza i costi di un team marketing interno a tempo pieno.</p>
+        <p>Unendo la mia esperienza a profondità strategica, esecuzione creativa, capacità multilingue in inglese, olandese e italiano e una padronanza nativa dell'AI, supporto le aziende nell'utilizzo degli strumenti AI come moltiplicatore di forza — accelerando ricerca, produzione di contenuti, analisi delle campagne e processo decisionale — così ottieni la velocità e la produttività di un intero team al costo di un singolo consulente.</p>
+        <p>Negli ultimi 10+ anni ho sviluppato brand, community e campagne nei settori del ciclismo, outdoor e lifestyle. Per me, un marketing efficace parte dalla comprensione delle persone: cosa valorizzano, cosa cattura la loro attenzione e cosa le motiva ad agire.</p>
+        <p>Basata a Varese, in Italia, lavoro con aziende in tutta Europa.</p>
       </div>
     </div>
   </section>
@@ -1035,6 +1084,66 @@
 
   </section>
 
+  <!-- PROGETTI -->
+  <section id="work">
+    <h2>Il mio lavoro</h2>
+    <div class="case-list">
+
+      <div class="case">
+        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — sito portfolio di un web developer freelance" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
+        <div>
+          <div class="tag">Web · Personal brand</div>
+          <h3>Da vetrina a macchina per contatti: il sito di un web developer freelance</h3>
+        </div>
+        <div>
+          <p>Rivisti posizionamento, messaggi e struttura delle pagine del sito di Fabio Angelici, web developer freelance — copy dell'hero più incisivo, servizi più chiari e un layout orientato alla conversione con CTA in evidenza. Il tutto affiancato da SEO on-page e tracciamento analytics per trasformare il traffico passivo in call prenotate.</p>
+          <p class="result">↑ 16% di CTR sulla CTA principale · 23% di aumento del tasso di conversione (CRO) · 30% di traffico organico in più nei primi 2 mesi</p>
+        </div>
+      </div>
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Immagine progetto</span>
+        </div>
+        <div>
+          <div class="tag">SaaS</div>
+          <h3>Riposizionamento di uno strumento B2B per un nuovo segmento</h3>
+        </div>
+        <div>
+          <p>Guidato il restyling del messaging per un'app di project management rivolta ai freelance — nuovo posizionamento, copy per la landing page, email di onboarding e programma di contenuti LinkedIn.</p>
+          <p class="result">↑ 22% di conversione da trial a pagante · Il nuovo segmento rappresenta il 30% del MRR</p>
+        </div>
+      </div>
+      -->
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Immagine progetto</span>
+        </div>
+        <div>
+          <div class="tag">Lancio brand</div>
+          <h3>Campagna di lancio end-to-end per un nuovo brand di moda</h3>
+        </div>
+        <div>
+          <p>Gestito il buzz pre-lancio, il seeding con influencer, la raccolta di contatti email e i contenuti del giorno di lancio su tutti i canali per il debutto di una collezione di moda emergente.</p>
+          <p class="result">Prima collezione esaurita in 48 ore · 1.200 iscrizioni alla waitlist prima del lancio</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <p class="cta-text">Prenota la tua chiamata introduttiva gratuita per condividere il tuo <em>problema, progetto o idea.</em></p>
+    <a class="cta-btn" href="#contact">Prenota una chiamata gratuita</a>
+  </div>
+
   <!-- TARIFFE -->
   <section id="pricing">
     <h2>Tariffe</h2>
@@ -1097,62 +1206,6 @@
               <li>Disponibilità prioritaria</li>
             </ul>
           </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-strip">
-    <p class="cta-text">Prenota la tua chiamata introduttiva gratuita per condividere il tuo <em>problema, progetto o idea.</em></p>
-    <a class="cta-btn" href="#contact">Prenota una chiamata</a>
-  </div>
-
-  <!-- PROGETTI -->
-  <section id="work">
-    <h2>Il mio lavoro</h2>
-    <div class="case-list">
-
-      <div class="case">
-        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — sito portfolio di un web developer freelance" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
-        <div>
-          <div class="tag">Web · Personal brand</div>
-          <h3>Da vetrina a macchina per contatti: il sito di un web developer freelance</h3>
-        </div>
-        <div>
-          <p>Rivisti posizionamento, messaggi e struttura delle pagine del sito di Fabio Angelici, web developer freelance — copy dell'hero più incisivo, servizi più chiari e un layout orientato alla conversione con CTA in evidenza. Il tutto affiancato da SEO on-page e tracciamento analytics per trasformare il traffico passivo in call prenotate.</p>
-          <p class="result">↑ [XX]% di CTR sulla CTA principale · [XX]% di aumento del tasso di conversione (CRO) · [XX]% di traffico organico in più in [X] mesi</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Immagine progetto</span>
-        </div>
-        <div>
-          <div class="tag">SaaS</div>
-          <h3>Riposizionamento di uno strumento B2B per un nuovo segmento</h3>
-        </div>
-        <div>
-          <p>Guidato il restyling del messaging per un'app di project management rivolta ai freelance — nuovo posizionamento, copy per la landing page, email di onboarding e programma di contenuti LinkedIn.</p>
-          <p class="result">↑ 22% di conversione da trial a pagante · Il nuovo segmento rappresenta il 30% del MRR</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Immagine progetto</span>
-        </div>
-        <div>
-          <div class="tag">Lancio brand</div>
-          <h3>Campagna di lancio end-to-end per un nuovo brand di moda</h3>
-        </div>
-        <div>
-          <p>Gestito il buzz pre-lancio, il seeding con influencer, la raccolta di contatti email e i contenuti del giorno di lancio su tutti i canali per il debutto di una collezione di moda emergente.</p>
-          <p class="result">Prima collezione esaurita in 48 ore · 1.200 iscrizioni alla waitlist prima del lancio</p>
         </div>
       </div>
 

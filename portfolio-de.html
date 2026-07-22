@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK5004VRP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HK5004VRP4');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RNL-MKT — Freelance Marketing-Beraterin</title>
@@ -331,6 +341,26 @@
     }
 
     .btn:hover { background: var(--accent-light); }
+
+    /* Two hero CTAs side by side; wraps to stacked on narrow screens */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    /* Outlined secondary CTA — supports the primary rather than competing with it.
+       Padding subtracts the 1px border so both buttons stay exactly the same height. */
+    .btn-secondary {
+      color: var(--accent);
+      background: none;
+      border: 1px solid var(--accent);
+      /* slightly tighter than the primary so longer localized labels (IT/FR) still fit on one row */
+      padding: calc(0.9rem - 1px) calc(1.6rem - 1px);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--accent); color: var(--white); }
 
     /* ─── SECTIONS ─── */
     section {
@@ -1261,7 +1291,11 @@
     <div class="inner">
       <h1>Marketing that<br><em>moves</em><br>your business.</h1>
       <p>Freelance Marketing-Beraterin mit Fokus auf KI-Strategie, Content und Wachstum für Marken, E-Commerce und digitale Produkte.</p>
-      <a class="btn" href="#contact">Mit mir arbeiten</a>
+      <!-- TODO: point the "free call" CTAs at the Calendly link when ready (also in .cta-strip below) -->
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Mit mir arbeiten</a>
+        <a class="btn btn-secondary" href="#contact">Kostenloses Erstgespräch</a>
+      </div>
     </div>
     <div class="hero-logo" aria-hidden="true">
       <img src="RNL_MKT_V5.png" alt="" width="420" height="420">
@@ -1277,8 +1311,8 @@
         <p class="portrait-caption">Roseline Lemoine · KI-Marketerin</p>
       </div>
       <div class="bio">
-        <p>Als internationale Marketing-Beraterin spezialisiert auf Markenstrategie, Content-Marketing, Social Media und digitale Marketingkampagnen. Ich helfe Start-ups, E-Commerce-Marken und wachsenden Unternehmen dabei, stärkere Marken aufzubauen, die richtige Zielgruppe zu erreichen und nachhaltiges Wachstum zu erzielen — ohne den Aufwand eines internen Marketingteams.</p>
-        <p>Möglich macht das eine einzigartige Kombination: strategische Tiefe, kreative Umsetzung, mehrsprachige Reichweite in Englisch, Niederländisch und Italienisch sowie native KI-Kompetenz. Ich unterstütze Unternehmen dabei, KI-Tools als Kraftmultiplikator einzusetzen — für schnellere Recherche, Content-Produktion, Kampagnenanalyse und Entscheidungsfindung — damit du die Geschwindigkeit und Leistung eines ganzen Teams zu den Kosten einer einzigen Beraterin bekommst.</p>
+        <p>Ich bin eine internationale Marketing-Beraterin, spezialisiert auf Markenstrategie, Content-Marketing, Social Media und digitale Marketingkampagnen. Ich helfe Start-ups, E-Commerce-Marken und wachsenden Unternehmen dabei, stärkere Marken aufzubauen, die richtige Zielgruppe zu erreichen und nachhaltiges Wachstum zu erzielen — ohne den Aufwand eines internen Marketingteams.</p>
+        <p>Indem ich meine Erfahrung mit strategischer Tiefe, kreativer Umsetzung, mehrsprachiger Reichweite in Englisch, Niederländisch und Italienisch sowie nativer KI-Kompetenz verbinde, unterstütze ich Unternehmen dabei, KI-Tools als Kraftmultiplikator einzusetzen — für schnellere Recherche, Content-Produktion, Kampagnenanalyse und Entscheidungsfindung — damit du die Geschwindigkeit und Leistung eines ganzen Teams zu den Kosten einer einzigen Beraterin bekommst.</p>
         <p>In den letzten 10+ Jahren habe ich Marken, Communities und Kampagnen in den Bereichen Radsport, Outdoor und Lifestyle entwickelt. Für mich beginnt effektives Marketing mit dem Verständnis von Menschen: was sie schätzen, was ihre Aufmerksamkeit weckt und was sie zum Handeln motiviert.</p>
         <p>Mit Sitz in Varese, Italien, arbeite ich mit Unternehmen in ganz Europa.</p>
       </div>
@@ -1365,6 +1399,66 @@
 
   </section>
 
+  <!-- WORK -->
+  <section id="work">
+    <h2>Meine Arbeit</h2>
+    <div class="case-list">
+
+      <div class="case">
+        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — Portfolio-Website eines freiberuflichen Webentwicklers" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
+        <div>
+          <div class="tag">Web · Personal Brand</div>
+          <h3>Von der Visitenkarte zur Terminmaschine: die Website eines freiberuflichen Webentwicklers</h3>
+        </div>
+        <div>
+          <p>Positionierung, Botschaft und Seitenstruktur für die Website von Fabio Angelici, freiberuflicher Webentwickler, überarbeitet — schärferer Hero-Text, klarere Leistungsdarstellung und ein konversionsorientiertes Layout mit auffälligen CTAs. Ergänzt durch On-Page-SEO und Analytics-Tracking, um aus passiven Besuchern gebuchte Erstgespräche zu machen.</p>
+          <p class="result">↑ 16% CTR auf den primären CTA · 23% höhere Conversion-Rate (CRO) · 30% mehr organischer Traffic in den ersten 2 Monaten</p>
+        </div>
+      </div>
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Projektbild</span>
+        </div>
+        <div>
+          <div class="tag">SaaS</div>
+          <h3>Neupositionierung eines B2B-Tools für ein neues Zielgruppensegment</h3>
+        </div>
+        <div>
+          <p>Messaging-Überarbeitung für eine Projektmanagement-App für Freelancer geleitet — neue Positionierung, Landingpage-Text, Onboarding-E-Mails und ein LinkedIn-Content-Programm.</p>
+          <p class="result">↑ 22% höhere Trial-zu-Paid-Conversion · Neues Segment jetzt 30% des MRR</p>
+        </div>
+      </div>
+      -->
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Projektbild</span>
+        </div>
+        <div>
+          <div class="tag">Markenlaunch</div>
+          <h3>End-to-End-Launch-Kampagne für ein neues Modelabel</h3>
+        </div>
+        <div>
+          <p>Pre-Launch-Buzz, Influencer-Seeding, Aufbau der E-Mail-Liste und Launch-Day-Content über alle Kanäle für das Debüt einer aufstrebenden Modemarke gesteuert.</p>
+          <p class="result">Erste Kollektion in 48 Stunden ausverkauft · 1.200 Warteliste-Anmeldungen vor dem Launch</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <p class="cta-text">Vereinbare dein kostenloses Erstgespräch, um dein <em>Problem, Projekt oder deine Idee</em> zu teilen.</p>
+    <a class="cta-btn" href="#contact">Kostenloses Erstgespräch</a>
+  </div>
+
   <!-- PRICING -->
   <section id="pricing">
     <h2>Preise</h2>
@@ -1427,62 +1521,6 @@
               <li>Priorisierte Verfügbarkeit</li>
             </ul>
           </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-strip">
-    <p class="cta-text">Vereinbare dein kostenloses Erstgespräch, um dein <em>Problem, Projekt oder deine Idee</em> zu teilen.</p>
-    <a class="cta-btn" href="#contact">Termin vereinbaren</a>
-  </div>
-
-  <!-- WORK -->
-  <section id="work">
-    <h2>Meine Arbeit</h2>
-    <div class="case-list">
-
-      <div class="case">
-        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — Portfolio-Website eines freiberuflichen Webentwicklers" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
-        <div>
-          <div class="tag">Web · Personal Brand</div>
-          <h3>Von der Visitenkarte zur Terminmaschine: die Website eines freiberuflichen Webentwicklers</h3>
-        </div>
-        <div>
-          <p>Positionierung, Botschaft und Seitenstruktur für die Website von Fabio Angelici, freiberuflicher Webentwickler, überarbeitet — schärferer Hero-Text, klarere Leistungsdarstellung und ein konversionsorientiertes Layout mit auffälligen CTAs. Ergänzt durch On-Page-SEO und Analytics-Tracking, um aus passiven Besuchern gebuchte Erstgespräche zu machen.</p>
-          <p class="result">↑ [XX]% CTR auf den primären CTA · [XX]% höhere Conversion-Rate (CRO) · [XX]% mehr organischer Traffic in [X] Monaten</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Projektbild</span>
-        </div>
-        <div>
-          <div class="tag">SaaS</div>
-          <h3>Neupositionierung eines B2B-Tools für ein neues Zielgruppensegment</h3>
-        </div>
-        <div>
-          <p>Messaging-Überarbeitung für eine Projektmanagement-App für Freelancer geleitet — neue Positionierung, Landingpage-Text, Onboarding-E-Mails und ein LinkedIn-Content-Programm.</p>
-          <p class="result">↑ 22% höhere Trial-zu-Paid-Conversion · Neues Segment jetzt 30% des MRR</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Projektbild</span>
-        </div>
-        <div>
-          <div class="tag">Markenlaunch</div>
-          <h3>End-to-End-Launch-Kampagne für ein neues Modelabel</h3>
-        </div>
-        <div>
-          <p>Pre-Launch-Buzz, Influencer-Seeding, Aufbau der E-Mail-Liste und Launch-Day-Content über alle Kanäle für das Debüt einer aufstrebenden Modemarke gesteuert.</p>
-          <p class="result">Erste Kollektion in 48 Stunden ausverkauft · 1.200 Warteliste-Anmeldungen vor dem Launch</p>
         </div>
       </div>
 

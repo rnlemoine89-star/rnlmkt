@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK5004VRP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HK5004VRP4');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RNL-MKT — Freelance Marketeer</title>
@@ -332,6 +342,26 @@
 
     .btn:hover { background: var(--accent-light); }
 
+    /* Two hero CTAs side by side; wraps to stacked on narrow screens */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    /* Outlined secondary CTA — supports the primary rather than competing with it.
+       Padding subtracts the 1px border so both buttons stay exactly the same height. */
+    .btn-secondary {
+      color: var(--accent);
+      background: none;
+      border: 1px solid var(--accent);
+      /* slightly tighter than the primary so longer localized labels (IT/FR) still fit on one row */
+      padding: calc(0.9rem - 1px) calc(1.6rem - 1px);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--accent); color: var(--white); }
+
     /* ─── SECTIONS ─── */
     section {
       padding: 6rem 2rem;
@@ -377,6 +407,17 @@
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    /* Sits in the same grid column as the photo (wrapped together) so it hugs the image
+       regardless of how tall the bio column next to it grows */
+    #about .portrait-caption {
+      margin-top: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
     }
 
     #about .bio {
@@ -936,7 +977,11 @@
     <div class="inner">
       <h1>Marketing that<br><em>moves</em><br>your business.</h1>
       <p>Freelance marketeer gespecialiseerd in AI-strategie, content en groei voor merken, e-commerce en digitale producten.</p>
-      <a class="btn" href="#contact">Werk met mij</a>
+      <!-- TODO: point the "free call" CTAs at the Calendly link when ready (also in .cta-strip below) -->
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Werk met mij</a>
+        <a class="btn btn-secondary" href="#contact">Plan een gratis gesprek</a>
+      </div>
     </div>
     <div class="hero-logo" aria-hidden="true">
       <img src="RNL_MKT_V5.png" alt="" width="420" height="420">
@@ -947,11 +992,15 @@
   <section id="about">
     <h2>Strategie eerst. Altijd creativiteit.</h2>
     <div class="about-grid">
-      <img src="portrait.jpg" alt="Roseline Lemoine" class="portrait" width="500" height="500">
+      <div class="portrait-block">
+        <img src="portrait.jpg" alt="Roseline Lemoine" class="portrait" width="500" height="500">
+        <p class="portrait-caption">Roseline Lemoine · AI Marketeer</p>
+      </div>
       <div class="bio">
-        <p>Ik ben Roseline Lemoine, een internationale marketingconsultant gespecialiseerd in merkstrategie, contentmarketing, social media en digitale marketingcampagnes. Ik help start-ups, e-commercemerken en groeiende bedrijven bij het opbouwen van sterkere merken, het bereiken van de juiste doelgroepen en het realiseren van duurzame groei — zonder de overhead van een fulltime marketingteam.</p>
-        <p>Wat dit mogelijk maakt is een unieke combinatie: strategische diepgang, creatieve uitvoering, meertalige communicatie in het Engels, Nederlands en Italiaans, en native AI-vaardigheid. Ik gebruik AI-tools als een krachtmultiplicator — onderzoek, contentproductie, campagneanalyse en besluitvorming versnellend — zodat je de snelheid en output van een volledig team krijgt tegen de kosten van één consultant.</p>
-        <p>De afgelopen 10+ jaar heb ik merken, communities en campagnes ontwikkeld in de fiets-, outdoor- en lifestylesector. Voor mij begint effectieve marketing met het begrijpen van mensen: wat zij waarderen, wat hun aandacht trekt en wat hen motiveert om actie te ondernemen. Gevestigd in Varese, Italië, werk ik met bedrijven in Italië en Zwitserland.</p>
+        <p>Ik ben een internationale marketingconsultant gespecialiseerd in merkstrategie, contentmarketing, social media en digitale marketingcampagnes. Ik help start-ups, e-commercemerken en groeiende bedrijven bij het opbouwen van sterkere merken, het bereiken van de juiste doelgroepen en het realiseren van duurzame groei — zonder de overhead van een fulltime marketingteam.</p>
+        <p>Door mijn ervaring te combineren met strategische diepgang, creatieve uitvoering, meertalig bereik in het Engels, Nederlands en Italiaans en native AI-vaardigheid, ondersteun ik organisaties bij het inzetten van AI-tools als krachtmultiplicator — voor snellere research, contentproductie, campagneanalyse en besluitvorming — zodat je de snelheid en output van een volledig team krijgt tegen de kosten van één consultant.</p>
+        <p>De afgelopen 10+ jaar heb ik merken, communities en campagnes ontwikkeld in de fiets-, outdoor- en lifestylesector. Voor mij begint effectieve marketing met het begrijpen van mensen: wat zij waarderen, wat hun aandacht trekt en wat hen motiveert om actie te ondernemen.</p>
+        <p>Gevestigd in Varese, Italië, werk ik met bedrijven in heel Europa.</p>
       </div>
     </div>
   </section>
@@ -1036,6 +1085,66 @@
 
   </section>
 
+  <!-- PROJECTEN -->
+  <section id="work">
+    <h2>Mijn werk</h2>
+    <div class="case-list">
+
+      <div class="case">
+        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — portfoliosite van een freelance webdeveloper" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
+        <div>
+          <div class="tag">Web · Personal brand</div>
+          <h3>Van visitekaartje naar leadmachine: de site van een freelance webdeveloper</h3>
+        </div>
+        <div>
+          <p>Positionering, boodschap en paginastructuur herzien voor de site van Fabio Angelici, freelance webdeveloper — scherpere herocopy, duidelijkere dienstomschrijving en een conversiegerichte lay-out met opvallende CTA's. Aangevuld met on-page SEO en analytics-tracking om passief verkeer om te zetten in geboekte kennismakingsgesprekken.</p>
+          <p class="result">↑ 16% CTR op de primaire CTA · 23% hogere conversieratio (CRO) · 30% meer organisch verkeer in de eerste 2 maanden</p>
+        </div>
+      </div>
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Projectafbeelding</span>
+        </div>
+        <div>
+          <div class="tag">SaaS</div>
+          <h3>Herpositionering van een B2B-tool voor een nieuw marktsegment</h3>
+        </div>
+        <div>
+          <p>De messaging van een projectmanagementapp voor freelancers vernieuwd — nieuwe positionering, landingspagina-copy, onboarding-e-mails en een LinkedIn-contentprogramma.</p>
+          <p class="result">↑ 22% conversie van trial naar betaald · Nieuw segment goed voor 30% van de MRR</p>
+        </div>
+      </div>
+      -->
+
+      <!-- HIDDEN until more client case studies are ready — restore by removing this comment wrapper
+      <div class="case">
+        <div class="img-placeholder case-image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Projectafbeelding</span>
+        </div>
+        <div>
+          <div class="tag">Merklancering</div>
+          <h3>End-to-end lanceringscampagne voor een nieuw modemerk</h3>
+        </div>
+        <div>
+          <p>Pre-launch buzz beheerd, influencer seeding gecoördineerd, e-mailadressen verzameld en lanceringscontent op alle kanalen verzorgd voor het debuut van een opkomende modecollectie.</p>
+          <p class="result">Eerste collectie uitverkocht binnen 48 uur · 1.200 aanmeldingen op de wachtlijst vóór de lancering</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <p class="cta-text">Plan je gratis kennismakingsgesprek om je <em>probleem, project of idee</em> te bespreken.</p>
+    <a class="cta-btn" href="#contact">Plan een gratis gesprek</a>
+  </div>
+
   <!-- TARIEVEN -->
   <section id="pricing">
     <h2>Tarieven</h2>
@@ -1098,62 +1207,6 @@
               <li>Prioritaire beschikbaarheid</li>
             </ul>
           </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-strip">
-    <p class="cta-text">Plan je gratis kennismakingsgesprek om je <em>probleem, project of idee</em> te bespreken.</p>
-    <a class="cta-btn" href="#contact">Plan een gesprek</a>
-  </div>
-
-  <!-- PROJECTEN -->
-  <section id="work">
-    <h2>Mijn werk</h2>
-    <div class="case-list">
-
-      <div class="case">
-        <img class="case-image" src="fabio-angelici/case-fabio-angelici.png" alt="Fabio Angelici — portfoliosite van een freelance webdeveloper" style="width:100%;object-fit:cover;object-position:top;border:1px solid var(--border);">
-        <div>
-          <div class="tag">Web · Personal brand</div>
-          <h3>Van visitekaartje naar leadmachine: de site van een freelance webdeveloper</h3>
-        </div>
-        <div>
-          <p>Positionering, boodschap en paginastructuur herzien voor de site van Fabio Angelici, freelance webdeveloper — scherpere herocopy, duidelijkere dienstomschrijving en een conversiegerichte lay-out met opvallende CTA's. Aangevuld met on-page SEO en analytics-tracking om passief verkeer om te zetten in geboekte kennismakingsgesprekken.</p>
-          <p class="result">↑ [XX]% CTR op de primaire CTA · [XX]% hogere conversieratio (CRO) · [XX]% meer organisch verkeer in [X] maanden</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Projectafbeelding</span>
-        </div>
-        <div>
-          <div class="tag">SaaS</div>
-          <h3>Herpositionering van een B2B-tool voor een nieuw marktsegment</h3>
-        </div>
-        <div>
-          <p>De messaging van een projectmanagementapp voor freelancers vernieuwd — nieuwe positionering, landingspagina-copy, onboarding-e-mails en een LinkedIn-contentprogramma.</p>
-          <p class="result">↑ 22% conversie van trial naar betaald · Nieuw segment goed voor 30% van de MRR</p>
-        </div>
-      </div>
-
-      <div class="case">
-        <div class="img-placeholder case-image">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          <span>Projectafbeelding</span>
-        </div>
-        <div>
-          <div class="tag">Merklancering</div>
-          <h3>End-to-end lanceringscampagne voor een nieuw modemerk</h3>
-        </div>
-        <div>
-          <p>Pre-launch buzz beheerd, influencer seeding gecoördineerd, e-mailadressen verzameld en lanceringscontent op alle kanalen verzorgd voor het debuut van een opkomende modecollectie.</p>
-          <p class="result">Eerste collectie uitverkocht binnen 48 uur · 1.200 aanmeldingen op de wachtlijst vóór de lancering</p>
         </div>
       </div>
 
