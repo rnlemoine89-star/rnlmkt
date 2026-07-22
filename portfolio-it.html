@@ -639,6 +639,138 @@
       color: var(--accent);
     }
 
+    /* ─── LEAD MAGNET (free audit checklist, email capture) ─── */
+    .lead-magnet {
+      /* sits below the tools row now, so it needs more breathing room than the
+         1.2rem that matched the service-card grid gap */
+      margin-top: 2.5rem;
+      border: 1.5px solid var(--accent);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .lead-magnet h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: normal;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .lm-text p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .lm-form { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .lm-form label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .lm-form input[type="email"] {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+
+    .lm-form input[type="email"]:focus { border-color: var(--accent); }
+    .lm-form input::placeholder { color: #BBBBBB; }
+
+    .lm-form button {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      border: none;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lm-form button:hover { background: var(--accent-light); }
+
+    .lm-note {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    /* Mailchimp's bot trap — must stay visually hidden but present in the DOM */
+    .lm-bot { position: absolute; left: -5000px; }
+
+    /* .lm-form .lm-consent (0,2,0) must outrank .lm-form label (0,1,1),
+       otherwise the uppercase/letter-spacing from the field labels leaks in here */
+    .lm-form .lm-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--gray);
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .lm-form .lm-consent input { margin-top: 0.15rem; flex-shrink: 0; accent-color: var(--accent); }
+
+    /* Revealed in place of the form once a valid address is given */
+    .lm-success { display: none; }
+    .lm-success.show { display: block; }
+    .lead-magnet.unlocked .lm-form { display: none; }
+
+    .lm-success p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 0.9rem;
+    }
+
+    .lm-download {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--accent);
+      padding: 0.9rem 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .lm-download:hover { background: var(--accent-light); }
+
+    @media (max-width: 720px) {
+      .lead-magnet { grid-template-columns: 1fr; gap: 1.4rem; padding: 1.4rem; }
+      .lm-download { display: block; text-align: center; }
+    }
+
     /* ─── TOOLS DROPDOWN ─── */
     .tools-wrapper {
       margin-top: 3rem;
@@ -831,32 +963,8 @@
       margin-bottom: 2rem;
     }
 
-    .contact-link {
-      display: block;
-      font-size: clamp(1.4rem, 3.5vw, 2rem);
-      font-weight: normal;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 0.3rem;
-      width: fit-content;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .contact-link:hover { color: var(--accent); border-color: var(--accent); }
-
     .google-form { margin-top: 2.5rem; max-width: 600px; }
     .google-form iframe { display: block; width: 100%; }
-
-    .linkedin-link { display: inline-block; margin-top: 1rem; opacity: 0.85; transition: opacity 0.2s; }
-    .linkedin-link:hover { opacity: 1; }
-
-    .contact-alt {
-      margin-top: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
 
     nav .logo img { display: block; width: 56px; height: auto; }
 
@@ -946,6 +1054,7 @@
               <li><a class="jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Chiama</a></li>
               <li><a href="https://wa.me/393926649331?text=Ciao%20Roseline%2C%20ti%20scrivo%20dal%20tuo%20sito." target="_blank" rel="noopener">Messaggio</a></li>
               <li><a class="jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a></li>
+              <li><a href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener">LinkedIn</a></li>
             </ul>
           </li>
       </ul>
@@ -967,6 +1076,7 @@
         <li><a href="#work">Il mio lavoro</a></li>
         <li><a href="#pricing">Tariffe</a></li>
         <li><a href="#contact">Contatto</a></li>
+        <li><a href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </nav>
@@ -1079,6 +1189,25 @@
         <li class="tool"><img src="logos/microsoft-dynamics.svg" alt="Microsoft Dynamics" width="32" height="32" onerror="this.closest('.tool').classList.add('missing')"><span class="tool-name">Microsoft Dynamics</span></li>
         <li class="tool"><img src="logos/shopify.svg" alt="Shopify" width="32" height="32" onerror="this.closest('.tool').classList.add('missing')"><span class="tool-name">Shopify</span></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- ─── LEAD MAGNET (instant download, gated on email) ─── -->
+    <div class="lead-magnet">
+      <div class="lm-text">
+        <h3>Analizza gratuitamente il tuo sito in soli 10 minuti</h3>
+        <p>Ricevi gratis la checklist di 40 punti che utilizzo negli audit dei miei clienti. Inserisci la tua email e scaricala subito.</p>
+      </div>
+      <form class="lm-form" novalidate>
+        <label for="lm-email">Indirizzo email</label>
+        <input type="email" id="lm-email" name="EMAIL" placeholder="tu@azienda.com" required>
+        <label class="lm-consent"><input type="checkbox" required> Accetto di ricevere occasionalmente delle email. Disiscrizione in qualsiasi momento.</label>
+        <button type="submit">Ottieni la checklist</button>
+        <p class="lm-note">Niente spam, puoi disiscriverti quando vuoi.</p>
+      </form>
+      <div class="lm-success">
+        <p>Ecco la tua checklist — grazie e buon lavoro.</p>
+        <a class="lm-download" href="conversion-checklist.pdf" download>Scarica il PDF</a>
       </div>
     </div>
 
@@ -1228,12 +1357,6 @@
       <a class="btn jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
     </div>
 
-    <div class="contact-alt">
-      <a class="contact-link jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" style="width:32px;height:32px;">
-      </a>
-    </div>
   </section>
 
   <!-- FOOTER -->
@@ -1253,6 +1376,53 @@
   </footer>
 
   <script>
+
+  /* ─── LEAD MAGNET: unlock the download once a valid address is entered ───────
+     The email is POSTed to LEAD_FORM_ENDPOINT (a Google Form formResponse URL or
+     any form handler). The download is revealed either way, so a network failure
+     never leaves someone stuck without the file they were promised.
+     NOTE: this is a client-side gate — it captures willing visitors, it does not
+     hard-protect the PDF. That is normal and expected for a lead magnet. */
+  (function () {
+    var LEAD_FORM_ENDPOINT = 'https://docs.google.com/forms/d/e/1FAIpQLSdmWImyahvRsaM1sAZZR8lbBbqaEZ6UumILToLjYBpVLIEzsQ/formResponse';
+    var LEAD_FORM_FIELD    = 'entry.981259241';   // Google Form question: "Insert your email"
+
+    var box = document.querySelector('.lead-magnet');
+    if (!box) return;
+    var form = box.querySelector('.lm-form');
+    var success = box.querySelector('.lm-success');
+    var input = box.querySelector('input[type="email"]');
+
+    function unlock() {
+      box.classList.add('unlocked');
+      success.classList.add('show');
+      try { localStorage.setItem('rnlmkt_checklist_unlocked', '1'); } catch (e) {}
+    }
+
+    // returning visitors skip the gate
+    try {
+      if (localStorage.getItem('rnlmkt_checklist_unlocked') === '1') unlock();
+    } catch (e) {}
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      var email = input.value.trim();
+      if (LEAD_FORM_ENDPOINT.indexOf('LEAD_FORM_ENDPOINT') === 0) {
+        console.warn('[RNL-MKT] Lead form endpoint not configured — address was NOT recorded:', email);
+      } else {
+        var body = new FormData();
+        body.append(LEAD_FORM_FIELD, email);
+        // no-cors: Google Forms accepts the POST but returns an opaque response
+        fetch(LEAD_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+          .catch(function () { /* never block the download on a network error */ });
+      }
+      unlock();
+      if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', { language: document.documentElement.lang });
+    });
+  })();
+
   function toggleMenu(btn) {
     const nav = btn.closest('nav');
     const panel = nav.querySelector('.mobile-menu');

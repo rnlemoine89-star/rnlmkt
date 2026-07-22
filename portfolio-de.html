@@ -106,7 +106,7 @@
     nav a:hover { color: var(--black); }
 
     /* Full-size links need ~875px; tighten them so they survive down to the 700px cut-off */
-    @media (max-width: 1050px) {
+    @media (max-width: 1150px) {
       nav { padding: 0.5rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
       .nav-right { gap: 1.2rem; }
@@ -455,7 +455,7 @@
     }
 
     /* With the Contact caret the links need ~724px tightened; collapse below that */
-    @media (max-width: 845px) {
+    @media (max-width: 930px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .mobile-menu { display: block; }
@@ -712,6 +712,138 @@
       position: absolute;
       left: 0;
       color: var(--accent);
+    }
+
+    /* ─── LEAD MAGNET (free audit checklist, email capture) ─── */
+    .lead-magnet {
+      /* sits below the tools row now, so it needs more breathing room than the
+         1.2rem that matched the service-card grid gap */
+      margin-top: 2.5rem;
+      border: 1.5px solid var(--accent);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .lead-magnet h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: normal;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .lm-text p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .lm-form { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .lm-form label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .lm-form input[type="email"] {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+
+    .lm-form input[type="email"]:focus { border-color: var(--accent); }
+    .lm-form input::placeholder { color: #BBBBBB; }
+
+    .lm-form button {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      border: none;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lm-form button:hover { background: var(--accent-light); }
+
+    .lm-note {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    /* Mailchimp's bot trap — must stay visually hidden but present in the DOM */
+    .lm-bot { position: absolute; left: -5000px; }
+
+    /* .lm-form .lm-consent (0,2,0) must outrank .lm-form label (0,1,1),
+       otherwise the uppercase/letter-spacing from the field labels leaks in here */
+    .lm-form .lm-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--gray);
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .lm-form .lm-consent input { margin-top: 0.15rem; flex-shrink: 0; accent-color: var(--accent); }
+
+    /* Revealed in place of the form once a valid address is given */
+    .lm-success { display: none; }
+    .lm-success.show { display: block; }
+    .lead-magnet.unlocked .lm-form { display: none; }
+
+    .lm-success p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 0.9rem;
+    }
+
+    .lm-download {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--accent);
+      padding: 0.9rem 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .lm-download:hover { background: var(--accent-light); }
+
+    @media (max-width: 720px) {
+      .lead-magnet { grid-template-columns: 1fr; gap: 1.4rem; padding: 1.4rem; }
+      .lm-download { display: block; text-align: center; }
     }
 
     /* ─── TOOLS DROPDOWN ─── */
@@ -1028,25 +1160,8 @@
       margin-bottom: 2rem;
     }
 
-    .contact-link {
-      display: block;
-      font-size: clamp(1.4rem, 3.5vw, 2rem);
-      font-weight: normal;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 0.3rem;
-      width: fit-content;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .contact-link:hover { color: var(--accent); border-color: var(--accent); }
-
     .google-form { margin-top: 2.5rem; max-width: 600px; }
     .google-form iframe { display: block; width: 100%; }
-
-    .linkedin-link { display: inline-block; margin-top: 1rem; opacity: 0.85; transition: opacity 0.2s; }
-    .linkedin-link:hover { opacity: 1; }
 
     /* ─── CONTACT FORM ─── */
     .contact-form {
@@ -1123,13 +1238,6 @@
     }
 
     .form-submit:hover { background: var(--accent-light); }
-
-    .contact-alt {
-      margin-top: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
 
     @media (max-width: 560px) {
       .form-row { grid-template-columns: 1fr; }
@@ -1251,16 +1359,17 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#about">Über mich</a></li>
-        <li><a href="#services">Wie ich helfe</a></li>
+        <li><a href="#services">Wie ich unterstütze</a></li>
         <li><a href="#work">Meine Arbeit</a></li>
-        <li><a href="#pricing">Preise</a></li>
+        <li><a href="#pricing">Aufwand</a></li>
         <li class="nav-dropdown">
             <a href="#contact" class="nav-dropdown-link">Kontakt</a>
             <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Kontaktoptionen" onclick="toggleContact(this)"><span class="nav-caret" aria-hidden="true">▾</span></button>
             <ul class="nav-dropdown-menu">
               <li><a class="jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Anrufen</a></li>
-              <li><a href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20deine%20Website." target="_blank" rel="noopener">Nachricht</a></li>
+              <li><a href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20Ihre%20Website." target="_blank" rel="noopener">Nachricht</a></li>
               <li><a class="jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a></li>
+              <li><a href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener">LinkedIn</a></li>
             </ul>
           </li>
       </ul>
@@ -1278,10 +1387,11 @@
     <div class="mobile-menu" id="mobile-menu">
       <ul>
         <li><a href="#about">Über mich</a></li>
-        <li><a href="#services">Wie ich helfe</a></li>
+        <li><a href="#services">Wie ich unterstütze</a></li>
         <li><a href="#work">Meine Arbeit</a></li>
-        <li><a href="#pricing">Preise</a></li>
+        <li><a href="#pricing">Aufwand</a></li>
         <li><a href="#contact">Kontakt</a></li>
+        <li><a href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
   </nav>
@@ -1311,8 +1421,8 @@
         <p class="portrait-caption">Roseline Lemoine · KI-Marketerin</p>
       </div>
       <div class="bio">
-        <p>Ich bin eine internationale Marketing-Beraterin, spezialisiert auf Markenstrategie, Content-Marketing, Social Media und digitale Marketingkampagnen. Ich helfe Start-ups, E-Commerce-Marken und wachsenden Unternehmen dabei, stärkere Marken aufzubauen, die richtige Zielgruppe zu erreichen und nachhaltiges Wachstum zu erzielen — ohne den Aufwand eines internen Marketingteams.</p>
-        <p>Indem ich meine Erfahrung mit strategischer Tiefe, kreativer Umsetzung, mehrsprachiger Reichweite in Englisch, Niederländisch und Italienisch sowie nativer KI-Kompetenz verbinde, unterstütze ich Unternehmen dabei, KI-Tools als Kraftmultiplikator einzusetzen — für schnellere Recherche, Content-Produktion, Kampagnenanalyse und Entscheidungsfindung — damit du die Geschwindigkeit und Leistung eines ganzen Teams zu den Kosten einer einzigen Beraterin bekommst.</p>
+        <p>Ich bin eine internationale Marketing-Beraterin, spezialisiert auf Markenstrategie, Content-Marketing, Social Media und digitale Marketingkampagnen. Ich unterstütze Start-ups, E-Commerce-Marken und wachsende Unternehmen dabei, stärkere Marken aufzubauen, die richtige Zielgruppe zu erreichen und nachhaltiges Wachstum zu erzielen — ohne den Aufwand eines internen Marketingteams.</p>
+        <p>Indem ich meine Erfahrung mit strategischer Tiefe, kreativer Umsetzung, mehrsprachiger Reichweite in Englisch, Niederländisch und Italienisch, sowie nativer KI-Kompetenz verbinde, unterstütze ich Unternehmen dabei, KI-Tools als Kraftmultiplikator einzusetzen — für schnellere Recherche, Content-Produktion, Kampagnenanalyse und Entscheidungsfindung — damit Sie die Geschwindigkeit und Leistung eines ganzen Teams zum Aufwand einer einzigen Beraterin bekommen.</p>
         <p>In den letzten 10+ Jahren habe ich Marken, Communities und Kampagnen in den Bereichen Radsport, Outdoor und Lifestyle entwickelt. Für mich beginnt effektives Marketing mit dem Verständnis von Menschen: was sie schätzen, was ihre Aufmerksamkeit weckt und was sie zum Handeln motiviert.</p>
         <p>Mit Sitz in Varese, Italien, arbeite ich mit Unternehmen in ganz Europa.</p>
       </div>
@@ -1321,13 +1431,13 @@
 
   <!-- SERVICES -->
   <section id="services">
-    <h2>Wie ich helfe</h2>
+    <h2>Wie ich unterstütze</h2>
     <div class="grid">
 
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-1" onclick="toggleService(this)">Brand &amp; Campaign Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-1">
-          <p class="service-desc">Verwandle deine Marke in eine Marktpräsenz, die Ergebnisse liefert. Von Go-to-Market-Strategie und Markenpositionierung bis hin zur Umsetzung von Multichannel-Kampagnen und Performance-Marketing — ich helfe Unternehmen, Sichtbarkeit zu steigern, Leads zu generieren und Zielgruppen in Kunden zu verwandeln, indem ich klare und wirkungsvolle Roadmaps und Playbooks erstelle.</p>
+          <p class="service-desc">Verwandeln Sie Ihre Marke in eine Marktpräsenz, die Ergebnisse liefert. Von Go-to-Market-Strategie und Markenpositionierung bis hin zur Umsetzung von Multichannel-Kampagnen und Performance-Marketing — ich unterstütze Unternehmen dabei, Sichtbarkeit zu steigern, Leads zu generieren und Zielgruppen in Kunden zu verwandeln, indem ich klare und wirkungsvolle Roadmaps und Playbooks erstelle.</p>
           <ul class="service-list">
           <li>Kampagnenstrategie &amp; -management</li>
           <li>Go-to-Market (GTM) Planung</li>
@@ -1342,12 +1452,12 @@
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-2" onclick="toggleService(this)">Content &amp; Communication <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-2">
-          <p class="service-desc">Baue Markenautorität auf und erreiche die richtige Zielgruppe mit Content, der rankt, ankommt und konvertiert. Von SEO-Content-Strategie und mehrsprachigem Copywriting bis hin zu Social-Media-Management und E-Mail-Kampagnen — ich entwickle Content-Systeme, die kanal- und marktübergreifend funktionieren, mit einer Kommunikationsstruktur, die überzeugt.</p>
+          <p class="service-desc">Bauen Sie Markenautorität auf und erreichen Sie die richtige Zielgruppe mit klarem Content, der rankt, ankommt und konvertiert. Von SEO-Content-Strategie und mehrsprachigem Copywriting bis hin zu Social-Media-Management und E-Mail-Kampagnen. Ich entwickle auch Content-Systeme, die kanal- und marktübergreifend funktionieren, mit einer Kommunikationsstruktur, die überzeugt.</p>
           <ul class="service-list">
           <li>Content-Strategie &amp; Redaktionsplanung</li>
           <li>Copywriting und Customer-Journey-Analyse für CRO</li>
           <li>SEO-Content &amp; organisches Wachstum</li>
-          <li>Mehrsprachige Content-Produktion (DE / EN / IT / NL / FR)</li>
+          <li>Mehrsprachige Content-Produktion (EN / IT / NL)</li>
           <li>Newsletter &amp; E-Mail-Copywriting</li>
           <li>Social-Media-Management</li>
         </ul>
@@ -1357,7 +1467,7 @@
       <div class="service-card">
         <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-panel-3" onclick="toggleService(this)">Community &amp; Growth Marketing <span class="service-caret" aria-hidden="true">+</span></button></h3>
         <div class="service-card-body" id="service-panel-3">
-          <p class="service-desc">Baue ein treues Publikum auf und steigere den Customer Lifetime Value. Ich entwickle CRM- und Lifecycle-Marketing-Programme, Ambassador- und Influencer-Strategien sowie E-Mail-Automatisierungs-Workflows, die die Kundenbindung verbessern, das Engagement vertiefen und deine Community in wiederkehrende Kunden verwandeln. Mit klaren Analysen und Loyalty-Programmen, die zu deiner Marke passen, finden wir die Schwachstellen und reduzieren die Abwanderung bei vielversprechenden Kunden.</p>
+          <p class="service-desc">Bauen Sie ein treues Publikum auf und steigern Sie den Customer Lifetime Value. Ich entwickle CRM- und Lifecycle-Marketing-Programme, Ambassador- und Influencer-Strategien, sowie E-Mail-Automatisierungs-Workflows, die die Kundenbindung verbessern, das Engagement vertiefen und Ihre Community in bleibende Kunden verwandeln. Mit klaren Analysen und Loyalty-Programmen, die zu Ihrer Marke passen, finden wir zusammen die Schwachstellen und reduzieren die Abwanderung bei vielversprechenden Kunden.</p>
           <ul class="service-list">
           <li>Community-Strategie &amp; -Management</li>
           <li>Ambassador- &amp; Influencer-Programme</li>
@@ -1394,6 +1504,25 @@
         <li class="tool"><img src="logos/microsoft-dynamics.svg" alt="Microsoft Dynamics" width="32" height="32" onerror="this.closest('.tool').classList.add('missing')"><span class="tool-name">Microsoft Dynamics</span></li>
         <li class="tool"><img src="logos/shopify.svg" alt="Shopify" width="32" height="32" onerror="this.closest('.tool').classList.add('missing')"><span class="tool-name">Shopify</span></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- ─── LEAD MAGNET (instant download, gated on email) ─── -->
+    <div class="lead-magnet">
+      <div class="lm-text">
+        <h3>Analysieren Sie Ihre Website kostenlos in nur 10 Minuten</h3>
+        <p>Holen Sie sich kostenlos die 40-Punkte-Checkliste, die ich bei Kunden-Audits einsetze. Tragen Sie Ihre E-Mail ein und laden Sie sie sofort herunter.</p>
+      </div>
+      <form class="lm-form" novalidate>
+        <label for="lm-email">E-Mail-Adresse</label>
+        <input type="email" id="lm-email" name="EMAIL" placeholder="du@unternehmen.com" required>
+        <label class="lm-consent"><input type="checkbox" required> Ich bin einverstanden, gelegentlich E-Mails zu erhalten. Jederzeit abbestellbar.</label>
+        <button type="submit">Checkliste erhalten</button>
+        <p class="lm-note">Kein Spam, jederzeit abbestellbar.</p>
+      </form>
+      <div class="lm-success">
+        <p>Hier ist Ihre Checkliste — viel Erfolg damit.</p>
+        <a class="lm-download" href="conversion-checklist.pdf" download>PDF herunterladen</a>
       </div>
     </div>
 
@@ -1455,13 +1584,13 @@
 
   <!-- CTA -->
   <div class="cta-strip">
-    <p class="cta-text">Vereinbare dein kostenloses Erstgespräch, um dein <em>Problem, Projekt oder deine Idee</em> zu teilen.</p>
+    <p class="cta-text">Vereinbaren Sie Ihr kostenloses Erstgespräch, um Ihr <em>Problem, Projekt oder Ihre Idee</em> zu teilen.</p>
     <a class="cta-btn" href="#contact">Kostenloses Erstgespräch</a>
   </div>
 
   <!-- PRICING -->
   <section id="pricing">
-    <h2>Preise</h2>
+    <h2>Aufwand</h2>
     <div class="pricing-accordion">
 
       <div class="pricing-item">
@@ -1473,7 +1602,7 @@
           <div class="pricing-panel-inner">
             <div>
               <div class="pricing-rate-inline" style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">€80<span style="font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--gray);"> / Std.</span></div>
-              <p class="pricing-desc">Ideal für kurzfristige Unterstützung, Audits, Beratungen oder Ad-hoc-Aufgaben, bei denen du fokussierte Expertise ohne langfristige Verpflichtung brauchst.</p>
+              <p class="pricing-desc">Ideal für kurzfristige Unterstützung, Audits, Beratungen oder Ad-hoc-Aufgaben, bei denen Sie fokussierte Expertise ohne langfristige Verpflichtung brauchen.</p>
             </div>
             <ul class="pricing-includes">
               <li>Minimum 2 Stunden</li>
@@ -1493,11 +1622,11 @@
           <div class="pricing-panel-inner">
             <div>
               <div style="font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:var(--black);margin-bottom:0.8rem;">Ab €2.500</div>
-              <p class="pricing-desc">Am besten für größere, klar definierte Projekte — Kampagnenlaunches, Content-Strategien, CRM-Einrichtungen oder Community-Programme mit klaren Deliverables und Timelines.</p>
+              <p class="pricing-desc">Am besten für größere, klar definierte Projekte — Kampagnenlaunches, Content-Strategien, CRM-Einrichtungen oder Community-Programme mit klarem Erfolg und klarer Zeittafel.</p>
             </div>
             <ul class="pricing-includes">
-              <li>Fester Umfang &amp; Deliverables</li>
-              <li>Projekt-Timeline im Voraus vereinbart</li>
+              <li>Fester Umfang &amp; Erfolg</li>
+              <li>Projekt-Zeittafel im Voraus vereinbart</li>
               <li>50% Anzahlung zum Start</li>
             </ul>
           </div>
@@ -1506,7 +1635,7 @@
 
       <div class="pricing-item">
         <button class="pricing-trigger" onclick="togglePricing(this)">
-          <span class="pricing-title">Monatliches Retainer</span>
+          <span class="pricing-title">Monatspauschale</span>
           <span class="pricing-icon">+</span>
         </button>
         <div class="pricing-panel">
@@ -1531,7 +1660,7 @@
   <section id="contact">
     <h2>Let's <em>move</em> together.</h2>
     <div style="width:100%;height:260px;background-image:url('portrait-contact.jpg');background-size:cover;background-position:center;margin-bottom:2.5rem;"></div>
-    <p>Hast du ein neues Projekt im Kopf oder brauchst du Unterstützung bei einem laufenden Projekt, einer Idee oder Kampagne? Melde dich gerne — ich melde mich innerhalb von 48 Stunden zurück.</p>
+    <p>Haben Sie ein neues Projekt im Kopf oder brauchen Sie Unterstützung bei einem laufenden Projekt, einer Idee oder Kampagne? Melden Sie sich gerne — ich melde mich innerhalb von 48 Stunden zurück.</p>
 
     <div class="google-form">
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUo519wf6dkyr0Ih39qse-nA8AO_bePi9HgOlRH2cx4UGa6Q/viewform?embedded=true&hl=de" width="100%" height="905" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Wird geladen…</iframe>
@@ -1539,16 +1668,10 @@
 
     <div class="contact-mobile-actions">
       <a class="btn jtel" data-t="KzM5MzkyNjY0OTMzMQ==">Anrufen</a>
-      <a class="btn" href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20deine%20Website." target="_blank" rel="noopener">Nachricht</a>
+      <a class="btn" href="https://wa.me/393926649331?text=Hallo%20Roseline%2C%20ich%20melde%20mich%20%C3%BCber%20Ihre%20Website." target="_blank" rel="noopener">Nachricht</a>
       <a class="btn jmail" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Mail</a>
     </div>
 
-    <div class="contact-alt">
-      <a class="contact-link jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
-      <a class="linkedin-link" href="https://www.linkedin.com/in/roseline-noemie-lemoine/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" style="width:32px;height:32px;">
-      </a>
-    </div>
   </section>
 
   <!-- FOOTER -->
@@ -1575,6 +1698,53 @@
   </script>
 
   <script>
+
+  /* ─── LEAD MAGNET: unlock the download once a valid address is entered ───────
+     The email is POSTed to LEAD_FORM_ENDPOINT (a Google Form formResponse URL or
+     any form handler). The download is revealed either way, so a network failure
+     never leaves someone stuck without the file they were promised.
+     NOTE: this is a client-side gate — it captures willing visitors, it does not
+     hard-protect the PDF. That is normal and expected for a lead magnet. */
+  (function () {
+    var LEAD_FORM_ENDPOINT = 'https://docs.google.com/forms/d/e/1FAIpQLSdmWImyahvRsaM1sAZZR8lbBbqaEZ6UumILToLjYBpVLIEzsQ/formResponse';
+    var LEAD_FORM_FIELD    = 'entry.981259241';   // Google Form question: "Insert your email"
+
+    var box = document.querySelector('.lead-magnet');
+    if (!box) return;
+    var form = box.querySelector('.lm-form');
+    var success = box.querySelector('.lm-success');
+    var input = box.querySelector('input[type="email"]');
+
+    function unlock() {
+      box.classList.add('unlocked');
+      success.classList.add('show');
+      try { localStorage.setItem('rnlmkt_checklist_unlocked', '1'); } catch (e) {}
+    }
+
+    // returning visitors skip the gate
+    try {
+      if (localStorage.getItem('rnlmkt_checklist_unlocked') === '1') unlock();
+    } catch (e) {}
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      var email = input.value.trim();
+      if (LEAD_FORM_ENDPOINT.indexOf('LEAD_FORM_ENDPOINT') === 0) {
+        console.warn('[RNL-MKT] Lead form endpoint not configured — address was NOT recorded:', email);
+      } else {
+        var body = new FormData();
+        body.append(LEAD_FORM_FIELD, email);
+        // no-cors: Google Forms accepts the POST but returns an opaque response
+        fetch(LEAD_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+          .catch(function () { /* never block the download on a network error */ });
+      }
+      unlock();
+      if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', { language: document.documentElement.lang });
+    });
+  })();
+
   function toggleMenu(btn) {
     const nav = btn.closest('nav');
     const panel = nav.querySelector('.mobile-menu');
