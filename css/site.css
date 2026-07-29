@@ -1098,6 +1098,13 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+/* The case banner is a self-contained 2:1 graphic — heading, avatar, logo, and
+   buttons. Cropping it into the fixed 220px cover-box clips its content (the
+   left/right edges on a phone, the buttons along the bottom on desktop), so
+   show the real image whole at its natural ratio on every screen. The 220px
+   height above still governs the placeholder tiles for not-yet-published cases. */
+img.case-image { height: auto; }
+
 @media (max-width: 560px) {
   .case { grid-template-columns: 1fr; }
 }
