@@ -1,0 +1,5 @@
+logos_old_*/
+.DS_Store
+
+# Vercel CLI creates this when you link/deploy — never commit it
+.vercel/

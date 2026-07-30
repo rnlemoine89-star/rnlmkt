@@ -1,0 +1,18 @@
+# Files that live in the repo but must NOT be served on the live site.
+# Vercel serves every file in the deployment by default, so without this a
+# visitor could open rnlmkt.com/HANDOFF.md etc. Keeps internal docs private
+# while leaving them in the Git repo for whoever works on the site.
+
+CLAUDE.md
+HANDOFF.md
+assets/logos/README.md
+
+# Dev-only: the print source used to regenerate the checklist PDF. The built
+# PDF (assets/downloads/conversion-checklist.pdf) IS served — this source isn't.
+tools/
+
+# GitHub Pages leftovers — inert on Vercel, no reason to serve them.
+CNAME
+.nojekyll
+.gitignore
+.DS_Store
