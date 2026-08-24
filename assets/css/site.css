@@ -1080,7 +1080,7 @@ h2 {
 /* ─── WORK ─── */
 #work .work-intro {
   color: var(--gray);
-  max-width: 60ch;
+  font-size: 1.15rem;
 }
 
 #work .case-list {
