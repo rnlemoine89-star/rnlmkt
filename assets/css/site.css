@@ -1078,6 +1078,11 @@ h2 {
 .cta-btn:hover { background: var(--light); }
 
 /* ─── WORK ─── */
+#work .work-intro {
+  color: var(--gray);
+  max-width: 60ch;
+}
+
 #work .case-list {
   margin-top: 3rem;
   display: flex;
