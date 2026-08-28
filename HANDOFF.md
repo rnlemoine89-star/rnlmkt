@@ -18,6 +18,7 @@ Contact: Roseline Lemoine · studio@rnlmkt.com
 | `portfolio-nl.html` | Dutch |
 | `portfolio-de.html` | German |
 | `portfolio-fr.html` | French |
+| `privacy.html` | Privacy policy — bilingual (Italian authoritative + English convenience). **Still a DRAFT** (`Privacy-Policy-RNLMKT-DRAFT.docx` at repo root is the source): unresolved `[DA VERIFICARE]`/`[DA COMPLETARE]` placeholders and "Nota implementativa" notes are rendered as visible callouts, not final text. Linked from every page's footer. Carries its own copy of the shared nav + footer (nav anchors point back to `index.html#…`) and its own page-scoped `<style>` block, so it is **not** part of the shared `site.css`; a nav/footer change on the five main pages now has to be mirrored here too. `<meta robots=noindex>` while it stays a draft. |
 | `assets/css/site.css` | Shared stylesheet for all five pages (see below) |
 | `assets/js/analytics-init.js` | The GA4 `gtag` bootstrap snippet, loaded synchronously in `<head>` right after the async `gtag.js` loader — same position/timing as when it was inline |
 | `assets/js/site.js` | Everything else: lead-magnet unlock, mobile menu, service/tools/pricing accordions, contact dropdown, email/phone de-obfuscation. Loaded at the end of `<body>`, same position as the old inline blocks |

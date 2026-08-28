@@ -11,6 +11,12 @@ assets/logos/README.md
 # PDF (assets/downloads/conversion-checklist.pdf) IS served — this source isn't.
 tools/
 
+# Source drafts / internal Word docs — must NOT be served. These may hold
+# personal data and unreviewed content (e.g. Privacy-Policy-RNLMKT-DRAFT.docx,
+# the source for privacy.html). The privacy policy is published as privacy.html,
+# never as its .docx source.
+*.docx
+
 # GitHub Pages leftovers — inert on Vercel, no reason to serve them.
 CNAME
 .nojekyll
