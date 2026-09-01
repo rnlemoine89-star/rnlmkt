@@ -212,3 +212,117 @@ function togglePricing(btn) {
 }
 
 (function(){function d(s){try{return atob(s)}catch(e){return""}}document.querySelectorAll("a.jmail").forEach(function(a){var e=d(a.getAttribute("data-e"));a.setAttribute("href","mailto:"+e);if(a.classList.contains("jmail-show"))a.textContent=e;});document.querySelectorAll("a.jtel").forEach(function(a){a.setAttribute("href","tel:"+d(a.getAttribute("data-t")));if(a.classList.contains("jtel-show"))a.textContent=d(a.getAttribute("data-d"));});})();
+
+/* ─── COOKIE CONSENT BANNER ────────────────────────────────────────────────
+   Google Consent Mode default (analytics_storage: denied) is set in
+   analytics-init.js, before GTM/gtag load, so no GA4 cookie is set or read
+   until this banner records an explicit choice. Choice persists in
+   localStorage; a "Cookie Settings" control (injected into the footer) lets
+   a visitor reopen the banner and change their mind at any time. */
+(function () {
+  var STORAGE_KEY = 'rnlmkt_cookie_consent'; // 'granted' | 'denied'
+
+  var COPY = {
+    en: {
+      text: 'We use Google Analytics to understand how visitors use this site. These cookies are optional and only run with your consent.',
+      accept: 'Accept', reject: 'Reject',
+      privacyLabel: 'Privacy Policy', privacyHref: 'privacy.html',
+      settings: 'Cookie Settings'
+    },
+    it: {
+      text: 'Utilizziamo Google Analytics per capire come i visitatori usano questo sito. Questi cookie sono facoltativi e vengono attivati solo con il tuo consenso.',
+      accept: 'Accetta', reject: 'Rifiuta',
+      privacyLabel: 'Informativa sulla Privacy', privacyHref: 'privacy-it.html',
+      settings: 'Impostazioni cookie'
+    },
+    de: {
+      text: 'Wir verwenden Google Analytics, um zu verstehen, wie Besucher diese Website nutzen. Diese Cookies sind optional und werden nur mit Ihrer Einwilligung aktiviert.',
+      accept: 'Akzeptieren', reject: 'Ablehnen',
+      privacyLabel: 'Datenschutzerklärung', privacyHref: 'privacy-de.html',
+      settings: 'Cookie-Einstellungen'
+    },
+    fr: {
+      text: 'Nous utilisons Google Analytics pour comprendre comment les visiteurs utilisent ce site. Ces cookies sont facultatifs et ne sont activés qu’avec votre consentement.',
+      accept: 'Accepter', reject: 'Refuser',
+      privacyLabel: 'Politique de confidentialité', privacyHref: 'privacy-fr.html',
+      settings: 'Paramètres des cookies'
+    },
+    nl: {
+      text: 'We gebruiken Google Analytics om te begrijpen hoe bezoekers deze site gebruiken. Deze cookies zijn optioneel en worden alleen geactiveerd met jouw toestemming.',
+      accept: 'Accepteren', reject: 'Weigeren',
+      privacyLabel: 'Privacybeleid', privacyHref: 'privacy-nl.html',
+      settings: 'Cookie-instellingen'
+    }
+  };
+
+  var lang = (document.documentElement.lang || 'en').toLowerCase();
+  var copy = COPY[lang] || COPY.en;
+  var banner = null;
+
+  function applyConsent(value) {
+    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: value });
+  }
+
+  function storeChoice(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+
+  function getChoice() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+
+  function hideBanner() {
+    if (banner) banner.classList.remove('show');
+  }
+
+  function buildBanner() {
+    banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML =
+      '<p class="cookie-banner-text">' + copy.text +
+      ' <a href="' + copy.privacyHref + '">' + copy.privacyLabel + '</a></p>' +
+      '<div class="cookie-banner-actions">' +
+      '<button type="button" class="cookie-reject">' + copy.reject + '</button>' +
+      '<button type="button" class="cookie-accept">' + copy.accept + '</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    banner.querySelector('.cookie-accept').addEventListener('click', function () {
+      storeChoice('granted');
+      applyConsent('granted');
+      hideBanner();
+    });
+    banner.querySelector('.cookie-reject').addEventListener('click', function () {
+      storeChoice('denied');
+      applyConsent('denied');
+      hideBanner();
+    });
+  }
+
+  function showBanner() {
+    if (!banner) buildBanner();
+    banner.classList.add('show');
+  }
+
+  function addFooterControl() {
+    var footerRight = document.querySelector('footer .footer-right');
+    if (!footerRight) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cookie-settings-link';
+    btn.textContent = copy.settings;
+    btn.addEventListener('click', showBanner);
+    footerRight.appendChild(btn);
+  }
+
+  var existing = getChoice();
+  if (existing === 'granted' || existing === 'denied') {
+    applyConsent(existing);
+  } else {
+    showBanner();
+  }
+  addFooterControl();
+})();
