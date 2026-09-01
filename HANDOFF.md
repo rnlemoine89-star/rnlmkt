@@ -26,8 +26,7 @@ Contact: Roseline Lemoine · studio@rnlmkt.com
 | `assets/logos/` | Tool icons for the "Tools & Software I work with" panel — **read `assets/logos/README.md`** |
 | `assets/images/` | Portrait photography (`portrait.jpg`, `portrait-contact.jpg`) and the brand logo (`brand-logo.png`) |
 | `assets/images/case-studies/` | Case-study screenshots (currently just `fabio-angelici.png`) |
-| `assets/downloads/conversion-checklist.pdf` | The lead magnet itself (4 pages) |
-| `tools/conversion-checklist.html` | Print source used to (re)generate the PDF above — dev-only, not linked from the live site |
+| `assets/downloads/ai-marketing-diagnostic.pdf` (EN) · `-it`/`-de`/`-fr`/`-nl` siblings | The lead magnet, one PDF per language (5 pages, "The 10-Question AI Marketing Diagnostic"). Source `.docx` files live at repo root as `AI-Marketing-Diagnostic-RNLMKT[-xx].docx`. Replaced the old `conversion-checklist.pdf` lead magnet (Sep 2026) — that file and its `tools/conversion-checklist.html` print source have been deleted. |
 | `vercel.json` | Response headers for the Vercel deploy (CSP, HSTS, etc. — see below) |
 | `.nojekyll` / `CNAME` | Leftover GitHub Pages files, no longer needed once the domain is fully cut over to Vercel — safe to delete then |
 
