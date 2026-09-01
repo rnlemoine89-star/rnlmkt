@@ -46,15 +46,19 @@
     .legal hr.legal-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
 
     /* Draft status banner */
-    .legal-draft-banner { background: #fdf6e3; border: 1px solid #e6cf86; border-left: 4px solid #c79b1f; border-radius: 4px; padding: 1.1rem 1.3rem; margin: 1.8rem 0 2.4rem; font-size: 0.9rem; line-height: 1.6; color: #5c4b12; }
+    .legal-draft-banner { background: #fdf6e3; border: 1px solid #e6cf86; border-left: 4px solid #c79b1f; border-radius: 4px; padding: 1.1rem 1.3rem; margin: 1.8rem 0 1.4rem; font-size: 0.9rem; line-height: 1.6; color: #5c4b12; }
     .legal-draft-banner strong { color: #7a6410; }
 
-    /* AI-draft / not-legally-reviewed warning (mirrors the red-bordered notice in the source doc) */
+    /* Authoritative-version / language cross-link */
+    .legal-lang-note { background: #eef4f8; border: 1px solid #cfe0ea; border-left: 4px solid var(--accent); border-radius: 4px; padding: 0.8rem 1.1rem; margin: 0 0 2.2rem; font-size: 0.86rem; line-height: 1.6; color: #2a4a5c; }
+    .legal-lang-note a { color: var(--accent); }
+
+    /* AI-draft / not-legally-reviewed warning */
     .legal-warning { background: #fdeaea; border: 1px solid #e2a9a9; border-left: 4px solid #C00000; border-radius: 4px; padding: 1.1rem 1.3rem; margin: 2.2rem 0; font-size: 0.88rem; line-height: 1.65; font-style: italic; color: #7a1a1a; }
 
     /* Implementation / editorial note — guidance for the site owner, not policy text */
     .legal-note { background: var(--light); border-left: 3px solid var(--gray); border-radius: 3px; padding: 0.7rem 1rem; margin: 0.2rem 0 1.6rem; font-size: 0.82rem; line-height: 1.6; color: var(--gray); }
-    .legal-note::before { content: "Nota implementativa — "; font-weight: 600; }
+    .legal-note::before { content: "Implementation note — "; font-weight: 600; }
 
     /* Inline unresolved placeholder marker */
     .legal-todo { background: #fff3cd; color: #7a5c00; padding: 0.05rem 0.35rem; border-radius: 3px; font-size: 0.85em; font-weight: 600; white-space: nowrap; }
@@ -66,7 +70,6 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- NAV -->
   <nav>
     <a class="logo" href="index.html#hero" aria-label="RNL-MKT">
       <img src="assets/images/brand-logo.png" alt="" width="56" height="56">
@@ -90,10 +93,10 @@
       </ul>
       <div class="lang-switcher">
         <button class="active">EN</button>
-        <button onclick="window.location.href='portfolio-it.html'">IT</button>
-        <button onclick="window.location.href='portfolio-nl.html'">NL</button>
-        <button onclick="window.location.href='portfolio-de.html'">DE</button>
-        <button onclick="window.location.href='portfolio-fr.html'">FR</button>
+        <button onclick="window.location.href='privacy-it.html'">IT</button>
+        <button onclick="window.location.href='privacy-nl.html'">NL</button>
+        <button onclick="window.location.href='privacy-de.html'">DE</button>
+        <button onclick="window.location.href='privacy-fr.html'">FR</button>
       </div>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu(this)">
         <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -111,186 +114,109 @@
     </div>
   </nav>
 
-  <!-- PRIVACY POLICY -->
   <main class="legal">
 
-    <div class="legal-draft-banner">
-      <strong>DRAFT — not yet published.</strong> This privacy policy is an AI-assisted draft, drafted 27 August 2026, and has <strong>not</strong> undergone legal review. It is inserted here for review only and should not be treated as the live policy until the outstanding items (highlighted in yellow) are resolved and a lawyer / data-protection-specialised commercialista has checked it. The Italian text is the authoritative version; the English text below it is a convenience translation.
-    </div>
+    <div class="legal-draft-banner"><strong>DRAFT — not yet published.</strong> This privacy policy is an AI-assisted draft, drafted 27 August 2026, and has <strong>not</strong> undergone legal review. It is here for review only and should not be treated as the live policy until the outstanding items (highlighted in yellow) are resolved and a lawyer / data-protection-specialised commercialista has checked it.</div>
 
-    <!-- ============ ITALIANO (authoritative) ============ -->
-    <h1 lang="it">Informativa sulla Privacy — rnlmkt.com</h1>
-    <p class="legal-lead" lang="it">Ai sensi degli artt. 13-14 del Regolamento (UE) 2016/679 (“GDPR”) e del D.Lgs. 196/2003 e successive modificazioni e integrazioni (D.Lgs. 101/2018), nonché delle Linee guida cookie e altri strumenti di tracciamento del Garante per la protezione dei dati personali (9 luglio 2021).</p>
-    <p class="legal-lead" lang="it"><strong>BOZZA — non ancora pubblicata. Data di redazione: 27 agosto 2026.</strong></p>
+    <div class="legal-lang-note">This is a convenience translation. The legally binding version is the Italian original — see the <a href="privacy-it.html">Italian version</a>.</div>
 
-    <div lang="it">
-      <h2>1. Titolare del trattamento e dati di contatto</h2>
-      <p>Il Titolare del trattamento dei dati personali raccolti tramite il sito web rnlmkt.com è:</p>
-      <ul class="legal-contact-block">
-        <li>Roseline Noemie Lemoine, libera professionista in regime forfettario operante con il nome commerciale “RNL-MKT”</li>
-        <li>Partita IVA: 04156900120</li>
-        <li>Sede: Via Giuseppe Mazzini 72, 21020 Casciago (VA), Italia</li>
-        <li>Email di contatto: <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20="></a> <span class="legal-todo">[DA VERIFICARE: indicare se PEC o email ordinaria]</span></li>
-      </ul>
-      <p>Il Titolare può essere contattato per qualsiasi richiesta relativa al trattamento dei dati personali all’indirizzo sopra indicato.</p>
-      <p>Non è stato nominato un Responsabile della Protezione dei Dati (RPD/DPO), non essendo tale nomina obbligatoria ai sensi dell’art. 37 GDPR per l’attività svolta.</p>
+    <h1>Privacy Policy — rnlmkt.com</h1>
 
-      <h2>2. Tipologie di dati raccolti</h2>
-      <p>Il sito rnlmkt.com raccoglie le seguenti categorie di dati personali:</p>
-      <ul>
-        <li>Dati forniti volontariamente tramite il modulo di contatto: nome, indirizzo email ed eventuale messaggio inseriti dall’utente nel modulo Google Form incorporato nella sezione “Contact” del sito.</li>
-        <li>Dati tecnici raccolti automaticamente dall’infrastruttura di hosting (Vercel): indirizzo IP, tipo di browser e dispositivo, pagine richieste, data e ora di accesso, log di sistema necessari al funzionamento e alla sicurezza del sito.</li>
-        <li>Dati di navigazione e analisi statistica (Google Analytics 4): identificativo del dispositivo/cookie, pagine visitate, durata della visita, provenienza del traffico. Raccolti esclusivamente previo consenso — vedi Sezione 8.</li>
-        <li>Dati di conversazione WhatsApp: numero di telefono e contenuto dei messaggi inviati dall’utente che sceglie volontariamente di contattare il Titolare tramite il collegamento WhatsApp presente sul sito.</li>
-      </ul>
-      <p class="legal-note">verificare l’elenco esatto dei campi presenti nel modulo Google Form prima della pubblicazione.</p>
+    <p class="legal-lead">Pursuant to Articles 13-14 of Regulation (EU) 2016/679 (“GDPR”) and Italian Legislative Decree 196/2003, as amended and supplemented (Legislative Decree 101/2018), as well as the cookie and other tracking-tools guidelines of the Italian Data Protection Authority (Garante per la protezione dei dati personali, 9 July 2021).</p>
 
-      <h2>3. Finalità e base giuridica del trattamento</h2>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr><th>Finalità</th><th>Base giuridica</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Rispondere alle richieste di contatto/preventivo ricevute tramite il modulo</td><td>Art. 6.1.b GDPR (misure precontrattuali su richiesta dell’interessato) e/o Art. 6.1.f (legittimo interesse a rispondere a richieste commerciali)</td></tr>
-            <tr><td>Gestire la comunicazione avviata volontariamente dall’utente tramite WhatsApp</td><td>Art. 6.1.a e/o 6.1.b GDPR (consenso implicito nell’avvio volontario della conversazione)</td></tr>
-            <tr><td>Analisi statistica del traffico del sito (Google Analytics 4)</td><td>Art. 6.1.a GDPR (consenso esplicito, raccolto tramite cookie banner prima dell’attivazione dei cookie)</td></tr>
-            <tr><td>Adempimenti contabili e fiscali, qualora il contatto dia origine a un rapporto contrattuale</td><td>Art. 6.1.c GDPR (obbligo legale)</td></tr>
-            <tr><td>Sicurezza e corretto funzionamento del sito (log tecnici dell’hosting)</td><td>Art. 6.1.f GDPR (legittimo interesse alla sicurezza informatica)</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <p class="legal-lead"><strong>DRAFT — not yet published. Drafted: 27 August 2026.</strong></p>
 
-      <h2>4. Modalità del trattamento e misure di sicurezza</h2>
-      <p>I dati sono trattati con strumenti elettronici e informatici, con logiche strettamente correlate alle finalità sopra indicate e in modo da garantirne la sicurezza e la riservatezza.</p>
-      <p>rnlmkt.com è un sito statico privo di un database proprio per la memorizzazione lato server dei dati degli utenti: i dati inseriti nel modulo di contatto sono conservati direttamente su Google Forms; le conversazioni avviate tramite WhatsApp sono conservate sui server di WhatsApp/Meta. Il Titolare adotta le seguenti misure: connessione sempre protetta tramite protocollo HTTPS/TLS; hosting su infrastruttura Vercel dotata di misure di sicurezza standard di settore; accesso ai dati limitato al solo Titolare.</p>
+    <h2>1. Data Controller and Contact Details</h2>
+    <p>The Data Controller for the personal data collected through the website rnlmkt.com is:</p>
+    <ul class="legal-contact-block">
+  <li>Roseline Noemie Lemoine, freelance professional under Italy’s flat-rate (“forfettario”) VAT regime, trading as “RNL-MKT”</li>
+  <li>VAT number (Partita IVA): 04156900120</li>
+  <li>Registered address: Via Giuseppe Mazzini 72, 21020 Casciago (VA), Italy</li>
+  <li>Contact email: <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20="></a></li>
+</ul>
+    <p>The Controller can be contacted for any request relating to the processing of personal data at the address indicated above.</p>
+    <p>No Data Protection Officer (DPO) has been appointed, as this is not mandatory under Art. 37 GDPR for the activity carried out.</p>
 
-      <h2>5. Destinatari e trasferimento dei dati verso paesi extra-UE</h2>
-      <p>Per l’erogazione del sito e dei servizi ad esso collegati, il Titolare si avvale dei seguenti soggetti terzi, che possono avere sede o trattare dati al di fuori dello Spazio Economico Europeo (SEE):</p>
-      <ul>
-        <li>Vercel Inc. (Stati Uniti) — fornitore dell’infrastruttura di hosting del sito. Vercel Inc. risulta certificata nell’ambito del Data Privacy Framework UE-USA (DPF), il meccanismo riconosciuto dalla Commissione Europea come garanzia adeguata per il trasferimento di dati verso gli Stati Uniti.</li>
-        <li>Google Ireland Limited / Google LLC (Stati Uniti) — fornitore del modulo di contatto (Google Forms) e del servizio di analisi statistica (Google Analytics 4). Google aderisce al Data Privacy Framework UE-USA e/o adotta le Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea quale base giuridica per il trasferimento dei dati.</li>
-        <li>WhatsApp Ireland Limited / Meta Platforms, Inc. (Stati Uniti) — servizio di messaggistica utilizzato su iniziativa volontaria dell’utente. Il trattamento dei dati scambiati tramite WhatsApp è disciplinato dall’informativa privacy di WhatsApp/Meta, che prevede le proprie garanzie per il trasferimento internazionale dei dati.</li>
-      </ul>
-      <p>Il Titolare non vende né cede a terzi i dati personali degli utenti per finalità commerciali proprie di terzi.</p>
-      <p class="legal-note">verificare al momento della pubblicazione quale meccanismo di trasferimento (DPF o SCC) sia effettivamente in vigore per ciascun fornitore, poiché tali certificazioni possono variare nel tempo.</p>
+    <h2>2. Categories of Data Collected</h2>
+    <p>The website rnlmkt.com collects the following categories of personal data:</p>
+    <ul>
+  <li>Data voluntarily submitted via the contact form: name, email address, and any message entered by the user in the embedded Google Form in the “Contact” section of the site.</li>
+  <li>Technical data automatically collected by the hosting infrastructure (Vercel): IP address, browser and device type, requested pages, access date and time, system logs needed for the operation and security of the site.</li>
+  <li>Browsing and statistical analytics data (Google Analytics 4): device/cookie identifier, pages visited, visit duration, traffic source. Collected only after prior consent — see Section 8.</li>
+  <li>WhatsApp conversation data: phone number and content of the messages sent by the user who voluntarily chooses to contact the Controller via the WhatsApp link on the site.</li>
+</ul>
+    <p class="legal-note">verify the exact list of fields in the Google Form before publication.</p>
 
-      <h2>6. Periodo di conservazione</h2>
-      <p>I dati raccolti tramite il modulo di contatto sono conservati per un periodo massimo di 1 (uno) anno dalla data dell’ultima interazione con l’utente, salvo che un periodo più lungo sia richiesto per l’adempimento di obblighi di legge (es. conservazione di documentazione contabile/fiscale, secondo i termini previsti dalla normativa vigente).</p>
-      <p>I dati di analisi raccolti tramite Google Analytics 4 sono conservati per un periodo massimo di 14 (quattordici) mesi.</p>
-      <p class="legal-note">questo periodo deve corrispondere alla configurazione tecnica effettiva, non solo al testo dell’informativa. L’impostazione predefinita di Google Analytics 4 è di 2 mesi, non 14: per conservare i dati per 14 mesi (il massimo consentito da GA4 per i dati a livello di evento) è necessario impostarlo manualmente in Amministrazione → Impostazioni dati → Conservazione dati. Google Forms non elimina automaticamente le risposte ricevute: serve un processo manuale (o uno script) per cancellarle trascorso il periodo di 1 anno dichiarato per i dati del modulo di contatto. Un’informativa che dichiara un periodo di conservazione non effettivamente rispettato viola il principio di esattezza e trasparenza di cui all’art. 5, par. 1, lett. a) GDPR.</p>
+    <h2>3. Purposes and Legal Basis of Processing</h2>
+    <div class="table-scroll">
+  <table>
+    <thead><tr><th>Purpose</th><th>Legal basis</th></tr></thead>
+    <tbody>
+    <tr><td>Responding to contact/quote requests received via the form</td><td>Art. 6.1.b GDPR (pre-contractual measures at the data subject’s request) and/or Art. 6.1.f (legitimate interest in responding to business inquiries)</td></tr>
+    <tr><td>Managing the communication voluntarily initiated by the user via WhatsApp</td><td>Art. 6.1.a and/or 6.1.b GDPR (consent implied in voluntarily starting the conversation)</td></tr>
+    <tr><td>Statistical analysis of site traffic (Google Analytics 4)</td><td>Art. 6.1.a GDPR (explicit consent, collected via the cookie banner before the cookies are activated)</td></tr>
+    <tr><td>Accounting and tax obligations, where the contact gives rise to a contractual relationship</td><td>Art. 6.1.c GDPR (legal obligation)</td></tr>
+    <tr><td>Security and proper functioning of the site (technical hosting logs)</td><td>Art. 6.1.f GDPR (legitimate interest in IT security)</td></tr>
+    </tbody>
+  </table>
+</div>
 
-      <h2>7. Diritti dell’interessato</h2>
-      <p>In qualità di interessato, l’utente ha diritto, alle condizioni previste dagli artt. 15-22 GDPR, di:</p>
-      <ul>
-        <li>accedere ai propri dati personali (diritto di accesso, art. 15);</li>
-        <li>ottenere la rettifica dei dati inesatti (art. 16);</li>
-        <li>ottenere la cancellazione dei dati, nei casi previsti (diritto all’oblio, art. 17);</li>
-        <li>ottenere la limitazione del trattamento (art. 18);</li>
-        <li>ottenere la portabilità dei dati (art. 20);</li>
-        <li>opporsi al trattamento (art. 21), in particolare per finalità di analisi statistica basate sul consenso, revocabile in qualsiasi momento senza pregiudicare la liceità del trattamento svolto prima della revoca.</li>
-      </ul>
-      <p>Per esercitare tali diritti, l’utente può contattare il Titolare all’indirizzo indicato nella Sezione 1.</p>
-      <p>L’interessato ha inoltre diritto di proporre reclamo all’Autorità Garante per la Protezione dei Dati Personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>), qualora ritenga che il trattamento dei propri dati personali sia avvenuto in violazione della normativa vigente.</p>
+    <h2>4. Processing Methods and Security Measures</h2>
+    <p>Data is processed using electronic and IT tools, with logic strictly related to the purposes indicated above and in such a way as to ensure its security and confidentiality.</p>
+    <p>rnlmkt.com is a static site with no database of its own for the server-side storage of user data: the data entered in the contact form is stored directly on Google Forms; conversations started via WhatsApp are stored on WhatsApp/Meta’s servers. The Controller adopts the following measures: connection always secured via the HTTPS/TLS protocol; hosting on the Vercel infrastructure with industry-standard security measures; access to the data limited to the Controller alone.</p>
 
-      <h2>8. Cookie policy — sintesi</h2>
-      <p>Il sito rnlmkt.com utilizza Google Analytics 4 per finalità di analisi statistica del traffico. I cookie associati a Google Analytics 4 sono non tecnici/non essenziali e NON vengono installati automaticamente alla prima visita: la loro attivazione avviene esclusivamente a seguito del consenso esplicito, libero, specifico e informato dell’utente, espresso tramite l’apposito banner cookie, in conformità alle Linee guida cookie del Garante (9 luglio 2021).</p>
-      <p>L’utente può revocare il consenso in qualsiasi momento con la stessa facilità con cui è stato prestato, tramite <span class="legal-todo">[DA COMPLETARE: indicare lo strumento/link per la gestione delle preferenze cookie]</span>.</p>
-      <p>Tabella cookie indicativa (da verificare e aggiornare in base alla configurazione effettiva):</p>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr><th>Nome cookie</th><th>Fornitore</th><th>Durata</th><th>Finalità</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>_ga</td><td>Google Analytics 4</td><td>2 anni</td><td>Distingue gli utenti unici</td></tr>
-            <tr><td>_ga_&lt;ID contenitore&gt;</td><td>Google Analytics 4</td><td>2 anni</td><td>Mantiene lo stato della sessione</td></tr>
-            <tr><td>_gid</td><td>Google Analytics 4</td><td>24 ore</td><td>Distingue gli utenti nella sessione corrente</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="legal-note">il sito non risulta attualmente dotato di un cookie banner conforme che blocchi l’attivazione di GA4 fino al consenso: si tratta di un requisito tecnico da implementare prima della pubblicazione di questa informativa, non solo di un requisito testuale.</p>
+    <h2>5. Recipients and Transfer of Data to Non-EU Countries</h2>
+    <p>To provide the site and its related services, the Controller uses the following third parties, which may be based or process data outside the European Economic Area (EEA):</p>
+    <ul>
+  <li>Vercel Inc. (United States) — provider of the site’s hosting infrastructure. Vercel Inc. is certified under the EU-US Data Privacy Framework (DPF), the mechanism recognised by the European Commission as an adequate safeguard for the transfer of data to the United States.</li>
+  <li>Google Ireland Limited / Google LLC (United States) — provider of the contact form (Google Forms) and the statistical analytics service (Google Analytics 4). Google adheres to the EU-US Data Privacy Framework and/or applies the Standard Contractual Clauses (SCCs) approved by the European Commission as the legal basis for the transfer of data.</li>
+  <li>WhatsApp Ireland Limited / Meta Platforms, Inc. (United States) — messaging service used at the user’s own initiative. The processing of data exchanged via WhatsApp is governed by the WhatsApp/Meta privacy policy, which provides its own safeguards for the international transfer of data.</li>
+</ul>
+    <p>The Controller does not sell or transfer users’ personal data to third parties for those third parties’ own commercial purposes.</p>
+    <p class="legal-note">at the time of publication, verify which transfer mechanism (DPF or SCC) is actually in force for each provider, as these certifications may change over time.</p>
 
-      <h2>9. Modifiche alla presente informativa</h2>
-      <p>Il Titolare si riserva il diritto di modificare o aggiornare, in tutto o in parte, la presente informativa, anche in conseguenza di modifiche normative. Si invita l’utente a consultare periodicamente questa pagina per essere informato di eventuali modifiche.</p>
-      <p>Ultimo aggiornamento: <span class="legal-todo">[DA COMPLETARE al momento della pubblicazione]</span> — bozza generata il 27 agosto 2026.</p>
+    <h2>6. Retention Period</h2>
+    <p>Data collected via the contact form is retained for a maximum period of 1 (one) year from the date of the last interaction with the user, unless a longer period is required to fulfil legal obligations (e.g. retention of accounting/tax documentation, according to the terms provided by the applicable legislation).</p>
+    <p>Analytics data collected via Google Analytics 4 is retained for a maximum period of 14 (fourteen) months.</p>
+    <p class="legal-note">this period must match the actual technical configuration, not just the text of the policy. Google Analytics 4’s default setting is 2 months, not 14: to retain the data for 14 months (the maximum GA4 allows for event-level data) it must be set manually under Admin → Data Settings → Data Retention. Google Forms does not automatically delete the responses received: a manual process (or a script) is needed to delete them once the 1-year period declared for the contact-form data has elapsed. A policy that declares a retention period that is not actually observed violates the principle of accuracy and transparency under Art. 5(1)(a) GDPR.</p>
 
-      <p class="legal-warning">Il presente documento costituisce una BOZZA generata con assistenza di intelligenza artificiale e NON è stata sottoposta a revisione legale. Prima della pubblicazione sul sito si raccomanda la verifica da parte di un avvocato o di un commercialista specializzato in protezione dei dati personali, con particolare attenzione alle Sezioni 5 (trasferimento internazionale dei dati) e 6 (periodo di conservazione), che devono corrispondere esattamente alle configurazioni tecniche effettivamente in uso.</p>
-    </div>
+    <h2>7. Data Subject Rights</h2>
+    <p>As a data subject, the user has the right, under the conditions provided by Articles 15-22 GDPR, to:</p>
+    <ul>
+  <li>access their personal data (right of access, Art. 15);</li>
+  <li>obtain the rectification of inaccurate data (Art. 16);</li>
+  <li>obtain the erasure of data, in the cases provided for (right to be forgotten, Art. 17);</li>
+  <li>obtain the restriction of processing (Art. 18);</li>
+  <li>obtain the portability of the data (Art. 20);</li>
+  <li>object to the processing (Art. 21), in particular for consent-based statistical analysis purposes, which may be withdrawn at any time without affecting the lawfulness of the processing carried out before the withdrawal.</li>
+</ul>
+    <p>To exercise these rights, the user may contact the Controller at the address indicated in Section 1.</p>
+    <p>The data subject also has the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali, <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>), should they consider that the processing of their personal data has taken place in breach of the applicable legislation.</p>
 
-    <hr class="legal-divider">
+    <h2>8. Cookie Policy — Summary</h2>
+    <p>The website rnlmkt.com uses Google Analytics 4 for statistical traffic-analysis purposes. The cookies associated with Google Analytics 4 are non-technical/non-essential and are NOT installed automatically on the first visit: they are activated only following the user’s explicit, freely given, specific and informed consent, expressed via the dedicated cookie banner, in accordance with the Garante’s cookie guidelines (9 July 2021).</p>
+    <p>The user may withdraw consent at any time as easily as it was given, via <span class="legal-todo">[TO BE COMPLETED: indicate the tool/link for managing cookie preferences]</span>.</p>
+    <p>Indicative cookie table (to be verified and updated according to the actual configuration):</p>
+    <div class="table-scroll">
+  <table>
+    <thead><tr><th>Cookie name</th><th>Provider</th><th>Duration</th><th>Purpose</th></tr></thead>
+    <tbody>
+    <tr><td>_ga</td><td>Google Analytics 4</td><td>2 years</td><td>Distinguishes unique users</td></tr>
+    <tr><td>_ga_&lt;container ID&gt;</td><td>Google Analytics 4</td><td>2 years</td><td>Maintains the session state</td></tr>
+    <tr><td>_gid</td><td>Google Analytics 4</td><td>24 hours</td><td>Distinguishes users in the current session</td></tr>
+    </tbody>
+  </table>
+</div>
+    <p class="legal-note">the site does not currently appear to have a compliant cookie banner that blocks the activation of GA4 until consent is given: this is a technical requirement to be implemented before publishing this policy, not merely a textual one.</p>
 
-    <!-- ============ ENGLISH (secondary / non-binding) ============ -->
-    <div lang="en">
-      <h1>English Translation (Secondary / Non-Binding)</h1>
-      <p class="legal-lead">This English section is a translation provided for convenience only. In case of any discrepancy, the Italian version above is the legally authoritative text.</p>
-      <p class="legal-lead"><strong>DRAFT — not yet published. Drafted: 27 August 2026.</strong></p>
+    <h2>9. Changes to This Policy</h2>
+    <p>The Controller reserves the right to modify or update this policy, in whole or in part, including as a result of regulatory changes. The user is invited to consult this page periodically to stay informed of any changes.</p>
+    <p>Last updated: <span class="legal-todo">[TO BE COMPLETED at the time of publication]</span> — draft generated on 27 August 2026.</p>
 
-      <h2>1. Data Controller and Contact Details</h2>
-      <p>The Data Controller for personal data collected through the website rnlmkt.com is:</p>
-      <ul class="legal-contact-block">
-        <li>Roseline Noemie Lemoine, freelance professional under Italy’s flat-rate (“forfettario”) VAT regime, trading as “RNL-MKT”</li>
-        <li>VAT number (Partita IVA): 04156900120</li>
-        <li>Registered address: Via Giuseppe Mazzini 72, 21020 Casciago (VA), Italy</li>
-        <li>Contact email: <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20="></a> <span class="legal-todo">[TO VERIFY: certified (PEC) or ordinary email]</span></li>
-      </ul>
-      <p>No Data Protection Officer (DPO) has been appointed, as this is not mandatory under Art. 37 GDPR for this activity.</p>
-
-      <h2>2. Categories of Data Collected</h2>
-      <ul>
-        <li>Data voluntarily submitted via the contact form: name, email address, and any message entered by the user in the embedded Google Form on the “Contact” section.</li>
-        <li>Technical data automatically collected by the hosting infrastructure (Vercel): IP address, browser/device type, requested pages, access date/time, system logs needed for site operation and security.</li>
-        <li>Browsing and analytics data (Google Analytics 4): device/cookie identifier, pages visited, session duration, traffic source. Collected only with prior consent — see Section 8.</li>
-        <li>WhatsApp conversation data: phone number and message content for users who voluntarily contact the Controller via the WhatsApp link on the site.</li>
-      </ul>
-
-      <h2>3. Purposes and Legal Basis</h2>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr><th>Purpose</th><th>Legal basis</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Responding to contact/quote requests</td><td>Art. 6(1)(b) GDPR (pre-contractual steps at the data subject’s request) and/or Art. 6(1)(f) (legitimate interest in responding to business inquiries)</td></tr>
-            <tr><td>Handling WhatsApp conversations initiated by the user</td><td>Art. 6(1)(a) and/or 6(1)(b) GDPR (consent implicit in voluntarily starting the conversation)</td></tr>
-            <tr><td>Website traffic analytics (Google Analytics 4)</td><td>Art. 6(1)(a) GDPR (explicit consent, collected via a cookie banner before any GA4 cookie is set)</td></tr>
-            <tr><td>Accounting/tax obligations, if contact leads to a contractual relationship</td><td>Art. 6(1)(c) GDPR (legal obligation)</td></tr>
-            <tr><td>Site security and proper functioning (hosting technical logs)</td><td>Art. 6(1)(f) GDPR (legitimate interest in IT security)</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>4. Processing Methods and Security Measures</h2>
-      <p>Data is processed using electronic tools, strictly in line with the purposes above, with measures to ensure security and confidentiality. rnlmkt.com is a static site with no server-side database of user data: contact-form entries are stored directly on Google Forms; WhatsApp conversations are stored on WhatsApp/Meta’s servers. Measures in place: HTTPS/TLS throughout; hosting on Vercel’s standard security infrastructure; data access limited to the Controller.</p>
-
-      <h2>5. Recipients and International Data Transfers</h2>
-      <ul>
-        <li>Vercel Inc. (USA) — hosting provider. Vercel is certified under the EU-US Data Privacy Framework (DPF), the transfer mechanism recognized by the European Commission as an adequate safeguard for transfers to the US.</li>
-        <li>Google Ireland Limited / Google LLC (USA) — provider of the contact form (Google Forms) and analytics service (Google Analytics 4). Google relies on the EU-US DPF and/or Standard Contractual Clauses (SCCs) as the legal basis for data transfers.</li>
-        <li>WhatsApp Ireland Limited / Meta Platforms, Inc. (USA) — messaging service used at the user’s own initiative, governed by WhatsApp/Meta’s own privacy policy and transfer safeguards.</li>
-      </ul>
-      <p>The Controller does not sell or share personal data with third parties for their own commercial purposes.</p>
-
-      <h2>6. Retention Period</h2>
-      <p>Contact-form data is retained for a maximum of 1 (one) year from the last interaction, unless a longer period is required by law (e.g. accounting/tax record-keeping). Google Analytics 4 data is retained for a maximum of 14 (fourteen) months.</p>
-      <p class="legal-note">this must match the actual technical configuration, not just the policy text. GA4’s default retention is 2 months, not 14 — to retain analytics data for 14 months (the maximum GA4 allows for event-level data) you must manually set this in Admin → Data Settings → Data Retention. Google Forms responses are not auto-deleted and require a manual/scripted deletion process to honor the 1-year period stated for contact-form data.</p>
-
-      <h2>7. Data Subject Rights</h2>
-      <p>Under Arts. 15-22 GDPR, users may exercise the rights of access, rectification, erasure, restriction, portability, and objection (including withdrawing consent for analytics at any time). Requests can be sent to the contact in Section 1. Users may also lodge a complaint with the Italian Data Protection Authority (Garante per la Protezione dei Dati Personali, <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
-
-      <h2>8. Cookie Policy Summary</h2>
-      <p>Google Analytics 4 cookies are non-essential and are NOT set on first visit; they activate only after explicit, freely given, specific and informed opt-in consent via the cookie banner, per the Garante’s 2021 cookie guidelines. Consent can be withdrawn at any time as easily as it was given.</p>
-      <p class="legal-note">the site does not yet appear to have a compliant cookie banner blocking GA4 until consent is given — this is a technical requirement to implement before publishing, not just a text requirement.</p>
-
-      <h2>9. Changes to This Policy</h2>
-      <p>The Controller reserves the right to modify or update this policy, including due to regulatory changes. Users are invited to check this page periodically.</p>
-
-      <p class="legal-warning">This document is an AI-assisted DRAFT and has not undergone legal review. Before publishing, have it checked by a lawyer or a data-protection-specialized commercialista, with particular attention to Section 5 (international transfers) and Section 6 (retention periods), which must exactly match the technical configuration actually in use.</p>
-    </div>
+    <p class="legal-warning">This document is an AI-assisted DRAFT and has not undergone legal review. Before publishing it on the site, it is recommended to have it checked by a lawyer or a data-protection-specialised commercialista, with particular attention to Sections 5 (international data transfers) and 6 (retention period), which must correspond exactly to the technical configurations actually in use.</p>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
       <img src="assets/images/brand-logo.png" alt="" width="40" height="40" class="footer-logo">
