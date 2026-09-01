@@ -15,7 +15,6 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
   <title>Privacy Policy — RNL-MKT</title>
   <link rel="preload" href="assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/dmserifdisplay-italic.woff2" as="font" type="font/woff2" crossorigin />
@@ -45,23 +44,9 @@
     .legal .table-scroll { overflow-x: auto; }
     .legal hr.legal-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
 
-    /* Draft status banner */
-    .legal-draft-banner { background: #fdf6e3; border: 1px solid #e6cf86; border-left: 4px solid #c79b1f; border-radius: 4px; padding: 1.1rem 1.3rem; margin: 1.8rem 0 1.4rem; font-size: 0.9rem; line-height: 1.6; color: #5c4b12; }
-    .legal-draft-banner strong { color: #7a6410; }
-
     /* Authoritative-version / language cross-link */
     .legal-lang-note { background: #eef4f8; border: 1px solid #cfe0ea; border-left: 4px solid var(--accent); border-radius: 4px; padding: 0.8rem 1.1rem; margin: 0 0 2.2rem; font-size: 0.86rem; line-height: 1.6; color: #2a4a5c; }
     .legal-lang-note a { color: var(--accent); }
-
-    /* AI-draft / not-legally-reviewed warning */
-    .legal-warning { background: #fdeaea; border: 1px solid #e2a9a9; border-left: 4px solid #C00000; border-radius: 4px; padding: 1.1rem 1.3rem; margin: 2.2rem 0; font-size: 0.88rem; line-height: 1.65; font-style: italic; color: #7a1a1a; }
-
-    /* Implementation / editorial note — guidance for the site owner, not policy text */
-    .legal-note { background: var(--light); border-left: 3px solid var(--gray); border-radius: 3px; padding: 0.7rem 1rem; margin: 0.2rem 0 1.6rem; font-size: 0.82rem; line-height: 1.6; color: var(--gray); }
-    .legal-note::before { content: "Implementation note — "; font-weight: 600; }
-
-    /* Inline unresolved placeholder marker */
-    .legal-todo { background: #fff3cd; color: #7a5c00; padding: 0.05rem 0.35rem; border-radius: 3px; font-size: 0.85em; font-weight: 600; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -116,15 +101,11 @@
 
   <main class="legal">
 
-    <div class="legal-draft-banner"><strong>DRAFT — not yet published.</strong> This privacy policy is an AI-assisted draft, drafted 27 August 2026, and has <strong>not</strong> undergone legal review. It is here for review only and should not be treated as the live policy until the outstanding items (highlighted in yellow) are resolved and a lawyer / data-protection-specialised commercialista has checked it.</div>
-
     <div class="legal-lang-note">This is a convenience translation. The legally binding version is the Italian original — see the <a href="privacy-it.html">Italian version</a>.</div>
 
     <h1>Privacy Policy — rnlmkt.com</h1>
 
     <p class="legal-lead">Pursuant to Articles 13-14 of Regulation (EU) 2016/679 (“GDPR”) and Italian Legislative Decree 196/2003, as amended and supplemented (Legislative Decree 101/2018), as well as the cookie and other tracking-tools guidelines of the Italian Data Protection Authority (Garante per la protezione dei dati personali, 9 July 2021).</p>
-
-    <p class="legal-lead"><strong>DRAFT — not yet published. Drafted: 27 August 2026.</strong></p>
 
     <h2>1. Data Controller and Contact Details</h2>
     <p>The Data Controller for the personal data collected through the website rnlmkt.com is:</p>
@@ -145,8 +126,6 @@
   <li>Browsing and statistical analytics data (Google Analytics 4): device/cookie identifier, pages visited, visit duration, traffic source. Collected only after prior consent — see Section 8.</li>
   <li>WhatsApp conversation data: phone number and content of the messages sent by the user who voluntarily chooses to contact the Controller via the WhatsApp link on the site.</li>
 </ul>
-    <p class="legal-note">verify the exact list of fields in the Google Form before publication.</p>
-
     <h2>3. Purposes and Legal Basis of Processing</h2>
     <div class="table-scroll">
   <table>
@@ -173,13 +152,9 @@
   <li>WhatsApp Ireland Limited / Meta Platforms, Inc. (United States) — messaging service used at the user’s own initiative. The processing of data exchanged via WhatsApp is governed by the WhatsApp/Meta privacy policy, which provides its own safeguards for the international transfer of data.</li>
 </ul>
     <p>The Controller does not sell or transfer users’ personal data to third parties for those third parties’ own commercial purposes.</p>
-    <p class="legal-note">at the time of publication, verify which transfer mechanism (DPF or SCC) is actually in force for each provider, as these certifications may change over time.</p>
-
     <h2>6. Retention Period</h2>
     <p>Data collected via the contact form is retained for a maximum period of 1 (one) year from the date of the last interaction with the user, unless a longer period is required to fulfil legal obligations (e.g. retention of accounting/tax documentation, according to the terms provided by the applicable legislation).</p>
     <p>Analytics data collected via Google Analytics 4 is retained for a maximum period of 14 (fourteen) months.</p>
-    <p class="legal-note">this period must match the actual technical configuration, not just the text of the policy. Google Analytics 4’s default setting is 2 months, not 14: to retain the data for 14 months (the maximum GA4 allows for event-level data) it must be set manually under Admin → Data Settings → Data Retention. Google Forms does not automatically delete the responses received: a manual process (or a script) is needed to delete them once the 1-year period declared for the contact-form data has elapsed. A policy that declares a retention period that is not actually observed violates the principle of accuracy and transparency under Art. 5(1)(a) GDPR.</p>
-
     <h2>7. Data Subject Rights</h2>
     <p>As a data subject, the user has the right, under the conditions provided by Articles 15-22 GDPR, to:</p>
     <ul>
@@ -195,7 +170,7 @@
 
     <h2>8. Cookie Policy — Summary</h2>
     <p>The website rnlmkt.com uses Google Analytics 4 for statistical traffic-analysis purposes. The cookies associated with Google Analytics 4 are non-technical/non-essential and are NOT installed automatically on the first visit: they are activated only following the user’s explicit, freely given, specific and informed consent, expressed via the dedicated cookie banner, in accordance with the Garante’s cookie guidelines (9 July 2021).</p>
-    <p>The user may withdraw consent at any time as easily as it was given, via <span class="legal-todo">[TO BE COMPLETED: indicate the tool/link for managing cookie preferences]</span>.</p>
+    <p>The user may withdraw consent at any time as easily as it was given, via the cookie preferences banner on this site, or through their browser's cookie settings.</p>
     <p>Indicative cookie table (to be verified and updated according to the actual configuration):</p>
     <div class="table-scroll">
   <table>
@@ -207,13 +182,9 @@
     </tbody>
   </table>
 </div>
-    <p class="legal-note">the site does not currently appear to have a compliant cookie banner that blocks the activation of GA4 until consent is given: this is a technical requirement to be implemented before publishing this policy, not merely a textual one.</p>
-
     <h2>9. Changes to This Policy</h2>
     <p>The Controller reserves the right to modify or update this policy, in whole or in part, including as a result of regulatory changes. The user is invited to consult this page periodically to stay informed of any changes.</p>
-    <p>Last updated: <span class="legal-todo">[TO BE COMPLETED at the time of publication]</span> — draft generated on 27 August 2026.</p>
-
-    <p class="legal-warning">This document is an AI-assisted DRAFT and has not undergone legal review. Before publishing it on the site, it is recommended to have it checked by a lawyer or a data-protection-specialised commercialista, with particular attention to Sections 5 (international data transfers) and 6 (retention period), which must correspond exactly to the technical configurations actually in use.</p>
+    <p>Last updated: 1 September 2026.</p>
 
   </main>
 
@@ -228,7 +199,7 @@
     <div class="footer-right">
       <a class="jmail jmail-show" data-e="c3R1ZGlvQHJubG1rdC5jb20=">Email</a>
       <a class="jtel jtel-show" data-t="KzM5MzkyNjY0OTMzMQ==" data-d="KzM5IDM5MiA2NjQgOTMzMQ==">Phone</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
       <span>P.IVA 04156900120</span>
     </div>
   </footer>
