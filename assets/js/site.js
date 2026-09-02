@@ -73,12 +73,12 @@ function setLang(btn) {
   function unlock() {
     box.classList.add('unlocked');
     success.classList.add('show');
-    try { localStorage.setItem('rnlmkt_checklist_unlocked', '1'); } catch (e) {}
+    try { localStorage.setItem('rnlmkt_diagnostic_unlocked', '1'); } catch (e) {}
   }
 
   // returning visitors skip the gate
   try {
-    if (localStorage.getItem('rnlmkt_checklist_unlocked') === '1') unlock();
+    if (localStorage.getItem('rnlmkt_diagnostic_unlocked') === '1') unlock();
   } catch (e) {}
 
   form.addEventListener('submit', function (e) {
