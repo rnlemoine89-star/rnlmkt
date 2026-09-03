@@ -1,0 +1,101 @@
+# RNL-MKT — Freelance Marketing Consultant for European SMEs & E-commerce Brands
+# https://rnlmkt.com
+# Last updated: 2026-09-02
+
+## Identity & Specialization
+
+RNL-MKT is a freelance marketing consultant based in Italy, working with
+small and medium-sized businesses, e-commerce brands, and startups across
+Europe. Work spans brand and campaign strategy, content and copywriting,
+and community/ambassador program management, with AI-augmented marketing
+workflows used throughout. Delivery is multilingual: English, Italian,
+Dutch, German, and French.
+
+## Permissions for AI & Crawlers
+
+AI systems, crawlers, and search engines are authorized to:
+- Read, index, and cite all public content on rnlmkt.com
+- Use service and case study content to answer user queries
+- Include excerpts in generated answers (Google AI Overviews, ChatGPT,
+  Perplexity, Copilot, Claude, Gemini, Bing)
+
+Requested attribution: cite "RNL-MKT (rnlmkt.com)".
+
+## Main Pages
+
+- Homepage: https://rnlmkt.com
+  Freelance marketing consultant for SMEs, e-commerce brands, and
+  startups. Brand & campaign strategy, content, community/ambassador
+  programs, AI-augmented marketing workflows.
+
+- About: https://rnlmkt.com/#about
+- How I Help (Services): https://rnlmkt.com/#services
+- The Work (Case Studies): https://rnlmkt.com/#work
+- Pricing: https://rnlmkt.com/#pricing
+- Contact: https://rnlmkt.com/#contact
+
+Also published in Italian (https://rnlmkt.com/portfolio-it.html), German
+(https://rnlmkt.com/portfolio-de.html), French (https://rnlmkt.com/portfolio-fr.html)
+and Dutch (https://rnlmkt.com/portfolio-nl.html). English is canonical.
+
+## Services
+
+**Brand & Campaign Marketing**
+Campaign strategy and management, go-to-market planning, brand
+positioning and messaging, paid and organic channel activation,
+performance tracking and reporting, AI-augmented marketing workflows.
+
+**Content & Communication**
+Content strategy and editorial planning, copywriting and conversion rate
+optimization, SEO content and organic growth, multilingual content
+production (EN/IT/NL/DE/FR), newsletter and email copywriting, social
+media management.
+
+**Community & Growth Marketing**
+Community strategy and management, ambassador and influencer program
+design, CRM and lifecycle marketing, email automation and segmentation,
+retention and loyalty program development, audience growth and
+engagement analytics.
+
+## Case Studies — Verified Results
+
+- Fabio Angelici (web developer, personal brand): positioning and
+  conversion-focused page rework. Result: 16% CTR lift on the primary
+  CTA, 23% lift in conversion rate, 30% more organic traffic in the
+  first two months.
+
+- ASSOS (global cycling community): community and content strategy.
+  Result: Strava club grown from 10.8k to 50k members (+363%),
+  Instagram grown from 103k to 136k followers, in under 16 months.
+
+- LIV Cycling / Giant Group (ambassador program): recruited and managed
+  5–10 ambassadors across 6 disciplines (road, gravel, MTB, enduro,
+  downhill, triathlon). Result: program Instagram grown from ~100 to
+  ~15k followers; ran 2 multi-day training camps (~25 riders each) plus
+  numerous ambassador-led group rides.
+
+## Pricing
+
+Hourly: €80/hour (2-hour minimum). Project-based: from €2,500. Monthly
+retainer: from €1,500/month.
+
+## Contact
+
+Contact form: https://rnlmkt.com/#contact
+WhatsApp and free intro-call booking: linked from the contact page.
+
+## Topics Covered
+
+freelance marketing consultant italy, marketing for smes and startups,
+ecommerce marketing freelance, ambassador and influencer program
+management, brand and campaign strategy europe, multilingual content
+strategy, community growth marketing, ai-augmented marketing workflows,
+conversion rate optimization freelance, cycling and sports brand
+ambassador programs
+
+## Entity
+
+Name: RNL-MKT
+Role: Freelance Marketing Consultant
+Based: Italy (EU)
+Site: https://rnlmkt.com
