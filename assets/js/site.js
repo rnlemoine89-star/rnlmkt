@@ -92,7 +92,9 @@ function setLang(btn) {
       var body = new FormData();
       body.append(LEAD_FORM_FIELD, email);
       // no-cors: Google Forms accepts the POST but returns an opaque response
-      fetch(LEAD_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+      // keepalive: let the request finish even if the page unloads right after
+      // submit (mirrors how GA4's beacon survives navigation)
+      fetch(LEAD_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, body: body })
         .catch(function () { /* never block the download on a network error */ });
     }
     unlock();
