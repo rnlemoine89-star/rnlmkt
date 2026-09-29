@@ -24,7 +24,7 @@ Contact: Roseline Lemoine · studio@rnlmkt.com
 | `assets/js/site.js` | Everything else: lead-magnet unlock, mobile menu, service/tools/pricing accordions, contact dropdown, email/phone de-obfuscation. Loaded at the end of `<body>`, same position as the old inline blocks |
 | `assets/fonts/` | Self-hosted WOFF2 (see below) |
 | `assets/logos/` | Tool icons for the "Tools & Software I work with" panel — **read `assets/logos/README.md`** |
-| `assets/images/` | Portrait photography (`portrait.jpg`, `portrait-contact.jpg`) and the brand logo (`brand-logo.png`) |
+| `assets/images/` | Portrait photography (`portrait-hero.jpg` — the 1050×1400 About-section photo on all five pages; `portrait-contact.jpg` — the contact-section banner; `portrait.jpg` — the previous About photo, kept as an unused alternative) and the brand logo (`brand-logo.png`) |
 | `assets/images/case-studies/` | Case-study screenshots (currently just `fabio-angelici.png`) |
 | `assets/downloads/ai-marketing-diagnostic.pdf` (EN) · `-it`/`-de`/`-fr`/`-nl` siblings | The lead magnet, one PDF per language (5 pages, "The 10-Question AI Marketing Diagnostic"). Source `.docx` files live at repo root as `AI-Marketing-Diagnostic-RNLMKT[-xx].docx`. Replaced the old `conversion-checklist.pdf` lead magnet (Sep 2026) — that file and its `tools/conversion-checklist.html` print source have been deleted. |
 | `vercel.json` | Response headers for the Vercel deploy (CSP, HSTS, etc. — see below) |
